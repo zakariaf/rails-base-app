@@ -1,11 +1,15 @@
-development:
+default: &default
   adapter: redis
-  url: redis://localhost:6379/1
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+
+development:
+  <<: *default
+  channel_prefix: <%= ENV.fetch("REDIS_CHANNEL_PREFIX") { "baseapp_development" } %>
 
 test:
+  <<: *default
   adapter: test
 
 production:
-  adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: base_app_production
+  <<: *default
+  channel_prefix: <%= ENV.fetch("REDIS_CHANNEL_PREFIX") { "baseapp_production" } %>

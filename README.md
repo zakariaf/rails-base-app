@@ -98,7 +98,7 @@ script.
 Or you can keep it around in case you decide to change your project's
 name later on.
 
-I git the rename script idea and codes from [Docker Rails Example](https://github.com/nickjj/docker-rails-example#running-a-script-to-automate-renaming-the-project) project with some small changes.
+I got the rename script idea and codes from [Docker Rails Example](https://github.com/nickjj/docker-rails-example#running-a-script-to-automate-renaming-the-project) project with some small changes.
 
 ## TODO
 

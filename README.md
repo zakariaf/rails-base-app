@@ -10,6 +10,7 @@ loaded up with a million personal opinions.
 
 I used `rails new baseapp -c tailwindcss -d postgresql` command to init the project.
 You can see the list of gems that I use in the project with the link of the related commit, so you can easily find what I configured for each gem.
+
 ### Back-end
 
 Order by the commit I did:
@@ -29,7 +30,8 @@ Order by the commit I did:
 - [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) ([commit](https://github.com/zakariaf/rails7-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
 - [Redis](https://redis.io/) ([commit](https://github.com/zakariaf/rails7-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
 - [Sidekiq](https://github.com/mperham/sidekiq) ([commit](https://github.com/zakariaf/rails7-base-app/commit/f7b759d9d42ce3444a04978fe2cbfc66cd120250))
-- [dotenv](https://github.com/bkeepers/dotenv) ([commit](https://github.com/zakariaf/rails7-base-app/commit/d287927e37eb9918b76becdf8c984a168821f500))
+- [dotenv](https://github.com/bkeepers/dotenv) ([commit](https://github.com/zakariaf/rails7-base-app/commit/3aaa696c4228aac2dac40ff42591f07dc74a62bb))
+
 ### Front-end
 
 - [importmap](https://github.com/rails/importmap-rails)
@@ -39,16 +41,16 @@ Order by the commit I did:
 
 ## Running this app
 
-#### Clone the repo
+You need to do few small steps to run the app
+
+### Clone the repo
 
 ```sh
 git clone https://github.com/zakariaf/rails7-base-app baseapp
 cd baseapp
-
-# Optionally checkout a specific tag, such as: git checkout 0.4.0
 ```
 
-#### Copy example file
+### Copy example file
 
 ```sh
 cp .env.example .env
@@ -59,7 +61,7 @@ This file is ignored from git (Check `.gitignore`) so it will never be commit.
 
 If you different values for environment variables in other envs, e.g. **test**, you need to copy one more: `.env.test`
 
-#### Setup the project:
+### Setup the project
 
 create databases
 

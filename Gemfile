@@ -57,6 +57,9 @@ gem 'pagy'
 # Map incoming controller parameters to named scopes in the resources
 gem 'has_scope'
 
+# A fast JSON:API serializer for Ruby Objects.
+gem 'jsonapi-serializer'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i( mri mingw x64_mingw )

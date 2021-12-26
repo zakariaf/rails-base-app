@@ -56,6 +56,7 @@ group :development, :test do
   gem 'debug', platforms: %i( mri mingw x64_mingw )
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rubocop-rails_config'
+  gem 'annotate'
 end
 
 group :development do

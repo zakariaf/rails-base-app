@@ -104,4 +104,7 @@ I got the rename script idea and codes from [Docker Rails Example](https://githu
 
 - [ ] Dockerize
 - [x] Add a script to rename the project
+- [ ] parallel tests
+- [ ] automatic deploy process using capistrano
+- [ ] add .gitlab-ci
 - [ ] Add the base frontend part using Vuejs

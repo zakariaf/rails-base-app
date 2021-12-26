@@ -75,8 +75,33 @@ rails db:setup
 rails s
 ```
 
+## Renaming the project
+
+This app is named `baseapp` and the module is named `BaseApp`. But for sure you would like to have a different name.
+
+The only thing you need to do is just running the `bin/rename-project yourappname YouAppName` script.
+as you see this script needs 2 arguments:
+
+- First argument: The lower case version of your app's name, such as `myapp` or `my_app` depending on your preference.
+- First argument: Used for your app's module name. such as `MyApp`
+
+`bin/rename-project myapp MyApp`
+
+This script is going to:
+
+- Perform a number of find / replace actions
+- Initialize a new git repo for you (Optionally)
+
+After that, If you're happy with your new project's name you can delete this
+script.
+
+Or you can keep it around in case you decide to change your project's
+name later on.
+
+I git the rename script idea and codes from [Docker Rails Example](https://github.com/nickjj/docker-rails-example#running-a-script-to-automate-renaming-the-project) project with some small changes.
+
 ## TODO
 
 - [ ] Dockerize
-- [ ] Add a script to rename the project
+- [x] Add a script to rename the project
 - [ ] Add the base frontend part using Vuejs

@@ -102,6 +102,9 @@ GEM
       i18n (>= 1.6, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    has_scope (0.8.0)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.0.1)
@@ -279,6 +282,7 @@ DEPENDENCIES
   debug
   factory_bot_rails
   faker
+  has_scope
   importmap-rails
   jbuilder
   pagy

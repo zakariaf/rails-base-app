@@ -54,6 +54,9 @@ gem 'bootsnap', require: false
 # paginator for Ruby
 gem 'pagy'
 
+# Map incoming controller parameters to named scopes in the resources
+gem 'has_scope'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i( mri mingw x64_mingw )

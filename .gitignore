@@ -35,3 +35,7 @@
 
 # Ignore SampleCov files
 /coverage/*
+
+# Ignore env files
+.env*
+!.env.example

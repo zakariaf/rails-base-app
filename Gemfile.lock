@@ -112,9 +112,6 @@ GEM
       activesupport (>= 5.2)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.0.1)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     io-console (0.5.9)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -255,14 +252,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stimulus-rails (1.0.2)
-      railties (>= 6.0.0)
-    tailwindcss-rails (2.0.2-arm64-darwin)
-      railties (>= 6.0.0)
     thor (1.1.0)
-    turbo-rails (1.0.0)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
@@ -295,7 +285,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   has_scope
-  importmap-rails
   jbuilder
   jsonapi-serializer
   pagy
@@ -310,9 +299,6 @@ DEPENDENCIES
   sidekiq
   simplecov
   sprockets-rails
-  stimulus-rails
-  tailwindcss-rails
-  turbo-rails
   tzinfo-data
   web-console
   webdrivers

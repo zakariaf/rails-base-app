@@ -34,10 +34,6 @@ Order by the commit I did:
 
 ### Front-end
 
-- [importmap](https://github.com/rails/importmap-rails)
-- [Hotwire Turbo](https://hotwired.dev/)
-- [StimulusJS](https://stimulus.hotwired.dev/)
-- [TailwindCSS](https://tailwindcss.com/)
 
 ## Running this app
 
@@ -107,4 +103,4 @@ I got the rename script idea and codes from [Docker Rails Example](https://githu
 - [ ] parallel tests
 - [ ] automatic deploy process using capistrano
 - [ ] add .gitlab-ci
-- [ ] Add the base frontend part using Vuejs
+- [ ] Add Vite

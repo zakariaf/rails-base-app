@@ -34,6 +34,7 @@ Order by the commit I did:
 
 ### Front-end
 
+- [Vite] Removing importmaps and all frontend libraries and Use Vite instead ([PR](https://github.com/zakariaf/rails7-base-app/pull/1))
 
 ## Running this app
 
@@ -55,7 +56,7 @@ cp .env.example .env
 Environment variables defined here(`.env`), feel free to change or add variables as needed.
 This file is ignored from git (Check `.gitignore`) so it will never be commit.
 
-If you different values for environment variables in other envs, e.g. **test**, you need to copy one more: `.env.test`
+If you use different values for environment variables in other envs, e.g. **test**, you need to copy one more: `.env.test`
 
 ### Setup the project
 
@@ -103,4 +104,5 @@ I got the rename script idea and codes from [Docker Rails Example](https://githu
 - [ ] parallel tests
 - [ ] automatic deploy process using capistrano
 - [ ] add .gitlab-ci
-- [ ] Add Vite
+- [x] Add Vite
+- [ ] Add Vuejs

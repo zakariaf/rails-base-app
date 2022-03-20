@@ -6,6 +6,10 @@
     "lint-staged": "lint-staged",
     "dev": "./bin/vite dev"
   },
+  "dependencies": {
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.14"
+  },
   "devDependencies": {
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",

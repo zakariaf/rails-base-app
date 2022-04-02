@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint 'app/javascript/**/*.{js,vue}'"
+  },
   "devDependencies": {
     "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",

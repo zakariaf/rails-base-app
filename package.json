@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "lint": "./node_modules/.bin/eslint 'app/javascript/**/*.{js,vue}'"
+    "lint": "eslint 'app/javascript/**/*.{js,vue}' --fix",
+    "format": "prettier ./**/*.{js,css,scss,md,vue,json} --write"
   },
   "devDependencies": {
     "eslint": "^8.12.0",

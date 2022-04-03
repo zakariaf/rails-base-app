@@ -133,7 +133,7 @@ GEM
     minitest (5.15.0)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.13.3-arm64-darwin)
+    nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     pagy (5.6.6)
     parallel (1.21.0)
@@ -284,6 +284,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   annotate

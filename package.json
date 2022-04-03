@@ -1,7 +1,7 @@
 {
   "scripts": {
     "lint": "eslint 'app/javascript/**/*.{js,vue}' --fix",
-    "format": "prettier ./**/*.{js,css,scss,md,vue,json} --write",
+    "format": "prettier ./**/*.{js,css,scss,md,vue,json,ts} --write",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "dev": "./bin/vite dev"

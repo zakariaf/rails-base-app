@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import RubyPlugin from 'vite-plugin-ruby'
-import path from "path"
+import vue from '@vitejs/plugin-vue'
+import path from 'path'
 
 export default defineConfig({
   resolve: {
@@ -10,8 +11,10 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "app", "javascript"),
       },
     ],
+    extensions: ['.vue', '.json', '.js'],
   },
   plugins: [
     RubyPlugin(),
+    vue(),
   ],
 })

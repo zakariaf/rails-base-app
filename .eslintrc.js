@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:vue/essential',
     'airbnb-base',
+    'prettier',
   ],
   parserOptions: {
     ecmaVersion: 'latest',

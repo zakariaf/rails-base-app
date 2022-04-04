@@ -9,6 +9,7 @@ module.exports = {
     'plugin:vue/vue3-essential',
     'plugin:vue/vue3-strongly-recommended',
     'plugin:vue/vue3-recommended',
+    'plugin:import/recommended',
     'prettier',
   ],
   parserOptions: {
@@ -20,5 +21,15 @@ module.exports = {
     'vue/attributes-order': 'error',
     'vue/order-in-components': 'error',
     'vue/require-default-prop': 'error',
+  },
+  settings: {
+    'import/resolver': {
+      'eslint-import-resolver-custom-alias': {
+        alias: {
+          '@': './app/javascript',
+        },
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+      },
+    },
   },
 };

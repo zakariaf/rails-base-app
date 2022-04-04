@@ -1,11 +1,9 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import App from '@/apps/website/MainLayout.Vue';
+import { createApp } from 'vue';
+import App from '@/apps/website/MainLayout.vue';
 import router from '@/routers/website';
 
-Vue.use(VueRouter);
+const app = createApp(App);
 
-new Vue({
-  router,
-  render: (h) => h(App),
-}).$mount('#app');
+app.use(router);
+
+app.mount('#app');

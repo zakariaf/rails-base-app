@@ -42,7 +42,6 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #fff;
 }
 .header-bar {
   position: relative;
@@ -51,11 +50,9 @@ export default {
   height: 50px;
 }
 .header-bar > .logo {
-  position: absolute;
   top: calc(50% - 20px);
   left: 10px;
   transform: translateY(-50%);
-  color: #fffc;
   cursor: default;
   user-select: none;
 }
@@ -74,7 +71,6 @@ export default {
   padding: 14px;
   margin-left: 2px;
   font-family: 'Quicksand', sans-serif;
-  color: #fff;
   cursor: pointer;
   transition: 0.3s linear all;
   user-select: none;

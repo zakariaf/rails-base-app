@@ -21,7 +21,7 @@ export default {
       { title: 'Index', routeName: 'index' },
       { title: 'About', routeName: 'about' },
       { title: 'Sign in', routeName: 'login' },
-      { title: 'Sign up', routeName: 'registration' },
+      { title: 'Sign up', routeName: 'signup' },
     ];
     return {
       menuItems,

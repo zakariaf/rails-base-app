@@ -1,8 +1,7 @@
 <template>
   <div class="container">
-    hi
     <div class="header-bar">
-      <h1 class="logo">RailsViteVue</h1>
+      <h1 class="logo">Rails 7 Vuejs</h1>
       <ul class="slider-menu">
         <li v-for="item in menuItems" :key="item.routeName" @click="goTo(item)">
           {{ item.title }}

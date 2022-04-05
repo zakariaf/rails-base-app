@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'login_page',
+    name: 'login',
     components: {
       default: Login,
     },

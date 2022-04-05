@@ -21,6 +21,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.2",
+    "sass": "^1.49.11",
     "vite": "^2.8.6",
     "vite-plugin-ruby": "^3.0.8"
   },

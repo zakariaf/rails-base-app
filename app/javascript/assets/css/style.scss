@@ -1,5 +1,6 @@
-@import './variables';
 @import './css_reset';
+@import './variables';
+@import './general';
 @import './main_menu.scss';
 
 body {
@@ -8,4 +9,11 @@ body {
   font-weight: normal;
   background: $--color-app-background;
   color: $--color-text-primary;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }

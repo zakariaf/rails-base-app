@@ -1,5 +1,5 @@
 <template>
-  <h2>You are visiting the {{ pageName }} page!</h2>
+  <h2 class="text-center">You are visiting the {{ pageName }} page!</h2>
 </template>
 
 <script>
@@ -8,9 +8,6 @@ export default {
     return {
       pageName: 'About',
     };
-  },
-  props: {
-    qoli: Array,
   },
 };
 </script>

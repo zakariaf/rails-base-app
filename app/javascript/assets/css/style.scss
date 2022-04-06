@@ -1,9 +1,11 @@
+@import './variables';
 @import './css_reset';
+@import './main_menu.scss';
 
 body {
   font-size: 16px;
   line-height: 1.8;
   font-weight: normal;
-  background: #fafafa;
-  color: gray;
+  background: $--color-app-background;
+  color: $--color-text-primary;
 }

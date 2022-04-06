@@ -1,10 +1,10 @@
-// import VueRouter from 'vue-router';
-// import routes from '../routes/panel';
+import { createRouter, createWebHistory } from 'vue-router';
+import routes from '@/routes/panel';
 
-// const router = new VueRouter({
-//   mode: 'history',
-//   base: '/panel/',
-//   routes,
-// });
+const router = createRouter({
+  history: createWebHistory(),
+  base: '/panel',
+  routes,
+});
 
-// export default router;
+export default router;

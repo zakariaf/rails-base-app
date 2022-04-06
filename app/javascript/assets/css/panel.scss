@@ -1,0 +1,26 @@
+@import './css_reset';
+
+.container {
+  background: #f1f1f1;
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+  background: #88bfb5;
+
+  li {
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+  }
+}

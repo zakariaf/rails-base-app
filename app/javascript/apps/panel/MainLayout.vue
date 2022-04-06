@@ -1,18 +1,22 @@
 <template>
   <div>
-    <router-view />
+    <MainMenu />
+
+    <div class="container">
+      <router-view />
+    </div>
   </div>
 </template>
 
-<style scoped>
-div {
-  width: 70vw;
-  margin: 0 auto;
-}
-</style>
+<script>
+import MainMenu from './MainMenu.vue';
 
-<style>
-.form-field input {
-  width: 100%;
-}
-</style>
+export default {
+  components: {
+    MainMenu,
+  },
+  data() {
+    return {};
+  },
+};
+</script>

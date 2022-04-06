@@ -1,16 +1,13 @@
 <template>
-  <div class="container">
-    <div class="header-bar">
-      <h1 class="logo">RailsViteVue</h1>
-      <ul class="slider-menu">
-        <li v-for="item in menuItems" :key="item.routeName" @click="goTo(item)">
+  <div>
+    <nav class="navbar">
+      <h2 class="navbar-logo">Rails 7 Vuejs</h2>
+      <ul class="navbar-nav">
+        <li v-for="item in menuItems" :key="item.routeName" @click="goTo(item)" class="nav-item">
           {{ item.title }}
         </li>
       </ul>
-    </div>
-    <div>
-      <router-view />
-    </div>
+    </nav>
   </div>
 </template>
 
@@ -35,47 +32,40 @@ export default {
 };
 </script>
 
-<style scoped>
-.container {
-  height: 100%;
+<style lang="scss" scoped>
+.navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.header-bar {
-  position: relative;
-  width: 50%;
-  min-width: 100px;
-  height: 50px;
-}
-.header-bar > .logo {
-  top: calc(50% - 20px);
-  left: 10px;
-  transform: translateY(-50%);
-  cursor: default;
-  user-select: none;
-}
-.slider-menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  z-index: 1;
-}
-.slider-menu > li {
-  display: inline-flex;
-  padding: 14px;
-  margin-left: 2px;
-  font-family: 'Quicksand', sans-serif;
-  cursor: pointer;
-  transition: 0.3s linear all;
-  user-select: none;
-}
-.slider-menu > li:hover {
-  color: #faa;
+  justify-content: space-between;
+  background: #fff !important;
+  box-shadow: 0px 5px 20px -17px rgba(0, 0, 0, 0.34);
+
+  .navbar-logo {
+    display: inline-block;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+
+    .nav-item {
+      font-size: 13px;
+      padding: 20px;
+      color: #333333;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:hover {
+        color: #fec771;
+        cursor: pointer;
+      }
+    }
+  }
 }
 </style>

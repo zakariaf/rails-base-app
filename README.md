@@ -35,9 +35,9 @@ Order by the commit I did:
 ### Front-end
 
 - [Vite](https://github.com/ElMassimo/vite_ruby) Removing importmaps and all frontend libraries and Use Vite instead ([PR](https://github.com/zakariaf/rails7-base-app/pull/1))
-- Code quality and format ([PR](https://github.com/zakariaf/rails7-base-app/pull/2))
+- Code quality and format ([PR1](https://github.com/zakariaf/rails7-base-app/pull/2), [PR2](https://github.com/zakariaf/rails7-base-app/pull/3))
   - [ESlint](https://eslint.org/)
-  - [Eslint airbnb](https://github.com/airbnb/javascript)
+  - [Eslint plugin vue](https://eslint.vuejs.org/rules/)
   - [Prettier](https://prettier.io/)
   - [Husky](https://typicode.github.io/husky/#/)
   - [lint-staged](https://github.com/okonet/lint-staged)

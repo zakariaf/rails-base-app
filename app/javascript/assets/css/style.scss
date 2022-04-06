@@ -2,6 +2,7 @@
 @import './variables';
 @import './general';
 @import './main_menu.scss';
+@import './form.scss';
 
 body {
   font-size: 16px;
@@ -12,8 +13,6 @@ body {
 }
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }

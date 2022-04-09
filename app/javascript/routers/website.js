@@ -3,7 +3,6 @@ import routes from '@/routes/website';
 
 const router = createRouter({
   history: createWebHistory(),
-  base: '/',
   routes,
 });
 

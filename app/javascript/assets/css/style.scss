@@ -1,0 +1,18 @@
+@import './css_reset';
+@import './variables';
+@import './general';
+@import './main_menu.scss';
+@import './form.scss';
+
+body {
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: normal;
+  background: $--color-app-background;
+  color: $--color-text-primary;
+}
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}

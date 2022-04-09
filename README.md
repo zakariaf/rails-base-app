@@ -1,6 +1,12 @@
+<p align="center">
+  <a href="https://rubyonrails.org/"><img width="300" src="https://zakaria.dev/assets/images/banner/Ruby_On_Rails_Logo.png" alt="Ruby On Rails"></a>
+  <a href="https://vite-ruby.netlify.app/"><img width="120" src="https://zakaria.dev/assets/images/banner/vite_ruby.svg" alt="Vite Ruby"></a>
+  <a href="https://vuejs.org/"><img width="100" src="https://zakaria.dev/assets/images/banner/vuejs-logo.png" alt="Vue.js"></a>
+</p>
+
 # An example Rails 7 app
 
-**This app is using Rails 7.0.0 and Ruby 3.0.3** You could use this example app as a base for your new project, or as a tutorial that tells you which steps you need to start a project from scratch
+**This app is using Rails 7.0.0, Ruby 3.0.3, Vite and Vue 3** You could use this example app as a base for your new project, or as a tutorial that tells you which steps you need to start a project from scratch
 
 This example app includes some gems that I'm using them for a long time. it wires up
 a number of things you might use in a real world Rails app, but at the same time it's not
@@ -41,6 +47,19 @@ Order by the commit I did:
   - [Prettier](https://prettier.io/)
   - [Husky](https://typicode.github.io/husky/#/)
   - [lint-staged](https://github.com/okonet/lint-staged)
+- [Vue.js](https://vuejs.org/) Vue.js version 3 ([PR](https://github.com/zakariaf/rails7-base-app/pull/4))
+
+## Apps
+
+I always prefer to have two apps for my projects, one for the part that will be shown public (I called it **Website**), and the second one for the part that you are managing there (I called it **Panel**), simplify you need to log in to have access there.
+
+If you can check the codes you can see that there are two layout view files and two actions in application_controller, and two routes in routes.rb file. and for frontend there are two different entrypoints and routers ane etc.
+
+In this case, you can use different technologies and UI Component Libraries in frontend, e.g. use [Vuetify](https://vuetifyjs.com/en/) for **Website** and use [VueTailwind](https://www.vue-tailwind.com/) for **Panel**. or even (it's a bit headache) but you can use [React](https://reactjs.org/) for **Website** and use [Vue.js](https://vuejs.org/) for **Panel**.
+
+Two simple html/css templates have been added for **Website** and **Panel**. you can remove them easily
+
+![Website and Panel preview](https://zakaria.dev/repos_images/website.png)
 
 ## Running this app
 
@@ -74,9 +93,17 @@ rails db:setup
 
 ### start the project
 
-```sh
-rails s
-```
+- rails server
+
+  ```sh
+  rails s
+  ```
+
+- frontend app
+
+  ```sh
+  yarn dev
+  ```
 
 ## Renaming the project
 
@@ -105,10 +132,8 @@ I got the rename script idea and codes from [Docker Rails Example](https://githu
 
 ## TODO
 
+- [ ] Add a JWT authentication solution
+- [ ] Add cypress
 - [ ] Dockerize
-- [x] Add a script to rename the project
-- [ ] parallel tests
 - [ ] automatic deploy process using capistrano
 - [ ] add .gitlab-ci
-- [x] Add Vite
-- [ ] Add Vuejs

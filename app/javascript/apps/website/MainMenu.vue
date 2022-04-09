@@ -5,6 +5,7 @@
       <li v-for="item in menuItems" :key="item.routeName" class="nav-item" @click="goTo(item)">
         {{ item.title }}
       </li>
+      <li class="nav-item" @click="dashboard">Dashboard</li>
     </ul>
   </nav>
 </template>
@@ -25,6 +26,9 @@ export default {
   methods: {
     goTo(item) {
       this.$router.push({ name: item.routeName });
+    },
+    dashboard() {
+      window.location.href = '/panel/';
     },
   },
 };

@@ -1,29 +1,18 @@
 <template>
-  <nav>
-    <ul class="navbar-nav">
-      <li v-for="item in menuItems" :key="item.routeName" class="nav-item" @click="goTo(item)">
-        {{ item.title }}
-      </li>
-    </ul>
-  </nav>
+  <ul class="navbar-nav">
+    <li class="nav-item">Profile</li>
+    <li class="nav-item" @click="logout">Logout</li>
+  </ul>
 </template>
 
 <script>
 export default {
   data() {
-    const menuItems = [
-      { title: 'Index', routeName: 'index' },
-      { title: 'About', routeName: 'about' },
-      { title: 'Sign in', routeName: 'login' },
-      { title: 'Sign up', routeName: 'signup' },
-    ];
-    return {
-      menuItems,
-    };
+    return {};
   },
   methods: {
-    goTo(item) {
-      this.$router.push({ name: item.routeName });
+    logout() {
+      window.location.href = '/';
     },
   },
 };

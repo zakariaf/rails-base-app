@@ -1,5 +1,5 @@
 <template>
-  <h2 class="text-center">You are visiting the {{ pageName }} page!</h2>
+  <h2 class="text-center">Welcome to the panel</h2>
 </template>
 
 <script>

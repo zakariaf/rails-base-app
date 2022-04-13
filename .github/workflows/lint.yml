@@ -22,15 +22,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          ruby-version: 16.x
+          node-version: 16.x
 
       - name: Install Yarn
         run: |
           npm install yarn
           yarn --version
-
-      - name: yarn install
-        run: yarn install
+          yarn install
 
       - name: Prepare environment
         run: |

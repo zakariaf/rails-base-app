@@ -1,0 +1,28 @@
+name: Lint
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  overcommit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+          bundler-cache: true
+
+      - name: Prepare environment
+        run: |
+          bundle install
+          bundle exec overcommit --sign
+          bundle exec overcommit --sign pre-commit
+      - name: Run all checks
+        run: bundle exec overcommit --run

@@ -16,8 +16,8 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
-          bundler-cache: true
+          ruby-version: 3.0.3 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Install Node.js
         uses: actions/setup-node@v3
@@ -28,9 +28,6 @@ jobs:
         run: |
           npm install yarn
           yarn --version
-
-      - name: bundle install
-        run: bundle install
 
       - name: yarn install
         run: yarn install

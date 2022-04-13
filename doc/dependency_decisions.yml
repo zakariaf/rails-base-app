@@ -1,0 +1,71 @@
+---
+- - :ignore_group
+  - development
+  - &1
+    :who: https://github.com/zakariaf/rails-base-app
+    :why:
+    :versions: []
+    :when: 2022-04-13 03:41:00.215706000 Z
+- - :ignore_group
+  - test
+  - *1
+- - :permit
+  - MIT
+  - &2
+    :who: https://github.com/zakariaf/rails-base-app
+    :why:
+    :versions: []
+    :when: 2022-04-13 03:45:00.215706000 Z
+- - :permit
+  - Apache 2.0
+  - *2
+- - :permit
+  - ISC
+  - *2
+- - :permit
+  - BSD
+  - *2
+- - :permit
+  - New BSD
+  - *2
+- - :permit
+  - Simplified BSD
+  - *2
+- - :permit
+  - BSD Zero Clause License
+  - *2
+- - :approve
+  - argparse
+  - :who: https://github.com/zakariaf/rails-base-app
+    :why: 'All licensing terms fulfilled; License: Python-2.0 (https://github.com/nodeca/argparse/blob/2.0.1/LICENSE)'
+    :versions:
+    - 2.0.1
+    :when: 2022-04-13 03:48:10.648706000 Z
+- - :approve
+  - brakeman
+  - :who: https://github.com/zakariaf/rails-base-app
+    :why: 'All licensing terms fulfilled; License: Brakeman Public Use License (https://github.com/presidentbeef/brakeman/blob/v5.2.2/LICENSE.md)'
+    :versions:
+    - 5.2.2
+    :when: 2022-04-13 03:49:23.678617000 Z
+- - :approve
+  - bundler-audit
+  - :who: https://github.com/zakariaf/rails-base-app
+    :why: 'All licensing terms fulfilled; License: GPL-3.0+ (https://github.com/rubysec/bundler-audit/blob/v0.9.0.1/COPYING.txt)'
+    :versions:
+    - 0.9.0.1
+    :when: 2022-04-13 03:50:38.233482000 Z
+- - :approve
+  - colorize
+  - :who: https://github.com/zakariaf/rails-base-app
+    :why: 'All licensing terms fulfilled; License: GPL-2.0 (https://github.com/fazibear/colorize/blob/master/LICENSE)'
+    :versions:
+    - 0.8.1
+    :when: 2022-04-13 03:51:02.497982000 Z
+- - :approve
+  - sidekiq
+  - :who: https://github.com/zakariaf/rails-base-app
+    :why: 'All licensing terms fulfilled; License: LGPL (https://github.com/mperham/sidekiq/blob/v6.4.1/LICENSE)'
+    :versions:
+    - 6.4.1
+    :when: 2022-04-13 03:51:20.617234000 Z

@@ -13,16 +13,32 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Ruby and gems
+      - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0
           bundler-cache: true
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          ruby-version: 16.x
+
+      - name: Install Yarn
+        run: |
+          npm install yarn
+          yarn --version
+
+      - name: bundle install
+        run: bundle install
+
+      - name: yarn install
+        run: yarn install
+
       - name: Prepare environment
         run: |
-          bundle install
           bundle exec overcommit --sign
           bundle exec overcommit --sign pre-commit
+
       - name: Run all checks
         run: bundle exec overcommit --run

@@ -1,0 +1,39 @@
+name: Lint
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  overcommit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.3 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install Yarn
+        run: |
+          npm install yarn
+          yarn --version
+          yarn install
+
+      - name: Prepare environment
+        run: |
+          bundle exec overcommit --sign
+          bundle exec overcommit --sign pre-commit
+
+      - name: Run all checks
+        run: SKIP=AuthorName,AuthorEmail bundle exec overcommit --run

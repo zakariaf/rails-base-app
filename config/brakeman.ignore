@@ -1,0 +1,22 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Missing Encryption",
+      "warning_code": 109,
+      "fingerprint": "6a26086cd2400fbbfb831b2f8d7291e320bcc2b36984d2abc359e41b3b63212b",
+      "check_name": "ForceSSL",
+      "message": "The application does not force use of HTTPS: `config.force_ssl` is not enabled",
+      "file": "config/environments/production.rb",
+      "line": 1,
+      "link": "https://brakemanscanner.org/docs/warning_types/missing_encryption/",
+      "code": null,
+      "render_path": null,
+      "location": null,
+      "user_input": null,
+      "confidence": "High",
+      "note": "If we want to use docker, we do not need to enbale ssl inside the app"
+    }
+  ],
+  "updated": "2022-04-13 06:16:24 +0200",
+  "brakeman_version": "5.2.2"
+}

@@ -38,4 +38,4 @@ jobs:
           bundle exec overcommit --sign pre-commit
 
       - name: Run all checks
-        run: bundle exec overcommit --run
+        run: SKIP=AuthorName,AuthorEmail bundle exec overcommit --run

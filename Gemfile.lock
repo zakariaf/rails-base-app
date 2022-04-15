@@ -360,7 +360,7 @@ DEPENDENCIES
   pg (~> 1.1)
   pry
   puma (~> 5.0)
-  rails (~> 7.0.0)
+  rails (~> 7.0.2.3)
   redis (~> 4.0)
   rspec-rails (~> 5.0.0)
   rubocop-rails_config

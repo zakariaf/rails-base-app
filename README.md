@@ -6,7 +6,9 @@
 
 # An example Rails 7 app
 
-**This app is using Rails 7.0.0, Ruby 3.0.3, Vite and Vue 3** You could use this example app as a base for your new project, or as a tutorial that tells you which steps you need to start a project from scratch
+[![](https://badgen.net/badge/Rails/7.0.2.3/red)](https://github.com/zakariaf/rails-base-app/blob/main/Gemfile.lock) [![](https://badgen.net/badge/Ruby/3.1.2/red)](https://github.com/zakariaf/rails-base-app/blob/main/.ruby-version) [![](https://img.shields.io/badge/dynamic/json?color=red&label=Vite&query=%24.devDependencies.vite&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Vue&query=%24.dependencies.vue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![GitHub license](https://img.shields.io/github/license/zakariaf/rails-base-app)](https://github.com/zakariaf/rails-base-app/blob/main/LICENSE)
+
+**This app is using Rails 7, Ruby 3, Vite and Vue 3** You could use this example app as a base for your new project, or as a tutorial that tells you which steps you need to start a project from scratch
 
 This example app includes some gems that I'm using them for a long time. it wires up
 a number of things you might use in a real world Rails app, but at the same time it's not
@@ -14,7 +16,7 @@ loaded up with a million personal opinions.
 
 ## Tech stack
 
-I used `rails new baseapp -c tailwindcss -d postgresql` command to init the project.
+I used `rails new baseapp -c tailwindcss -d postgresql` command to init the project to have based on importmaps and default configs, but I removed importmaps and tailwindcss and all default configs and moved to using Vite instead.
 You can see the list of gems that I use in the project with the link of the related commit, so you can easily find what I configured for each gem.
 
 ### Back-end

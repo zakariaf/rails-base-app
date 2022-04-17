@@ -1,47 +1,19 @@
-inherit_gem:
-  rubocop-rails_config:
-    - config/rails.yml
 
-# Override Setting
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.1
+  NewCops: enable
   Include:
     - "spec/**/*"
   Exclude:
     - "lib/**/*"
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    "%i": "()"
-    "%w": "()"
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: single_quotes
-
-# Metrics Cops
-Metrics/ClassLength:
-  Description: 'Avoid classes longer than 100 lines of code.'
-  Max: 100
-  Enabled: true
-
-Metrics/ModuleLength:
-  Description: 'Avoid modules longer than 100 lines of code.'
-  Max: 100
-  Enabled: true
-
-Metrics/ParameterLists:
-  Description: 'Pass no more than four parameters into a method.'
-  Max: 4
-  Enabled: true
-
-Metrics/MethodLength:
-  Description: 'Avoid methods longer than 5 lines of code.'
-  StyleGuide: '<https://github.com/bbatsov/ruby-style-guide#short-methods>'
-  Max: 5
-  Enabled: true
+    - "bin/**/*"
 
 Metrics/BlockLength:
-  CountComments: false
-  Max: 5
   IgnoredMethods:
     - context
     - describe

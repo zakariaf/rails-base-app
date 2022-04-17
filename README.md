@@ -59,7 +59,7 @@ Order by the commit I did:
 
 #### Backend
 
-- [RuboCop Rails](https://github.com/toshimaru/rubocop-rails_config) Code quality and format ([commit1](https://github.com/zakariaf/rails-base-app/commit/abfdce196721e517b9391b618093506fe062c499)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/89e675b793a0467b271e91c85215a6539bcc4b57))
+- [RuboCop](https://github.com/rubocop/rubocop) Code quality and format. First I added [rubocop-rails_config gem](https://github.com/toshimaru/rubocop-rails_config) by these two commits ([commit1](https://github.com/zakariaf/rails-base-app/commit/abfdce196721e517b9391b618093506fe062c499)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/89e675b793a0467b271e91c85215a6539bcc4b57)), but after a while, I removed this gem and added rubocop gem and its extensions separately in this [PR](https://github.com/zakariaf/rails-base-app/pull/8)
 
 20. [Brakeman](https://github.com/presidentbeef/brakeman) Checking Ruby on Rails applications for security vulnerabilities. you can check `config/brakeman.ignore` to see ignore errors ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
 21. [bundler-audit](https://github.com/rubysec/bundler-audit) Patch-level verification for bundler ([PR](https://github.com/zakariaf/rails-base-app/pull/7))

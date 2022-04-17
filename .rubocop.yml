@@ -12,6 +12,7 @@ AllCops:
   Exclude:
     - "lib/**/*"
     - "bin/**/*"
+    - "db/schema.rb"
 
 Metrics/BlockLength:
   IgnoredMethods:

@@ -21,8 +21,9 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  include Devise::JWT::RevocationStrategies::Allowlist
+
   devise :database_authenticatable, :registerable,
-         :recoverable, :validatable, :trackable
+         :recoverable, :validatable, :trackable,
+         :jwt_authenticatable, jwt_revocation_strategy: self
 end

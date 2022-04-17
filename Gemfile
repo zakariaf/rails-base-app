@@ -61,6 +61,8 @@ gem 'rack-cors'
 
 # a flexible authentication solution
 gem 'devise'
+# a devise extension which uses JWT tokens for user authentication
+gem 'devise-jwt'
 
 # Linting
 gem 'brakeman'

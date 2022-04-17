@@ -56,6 +56,9 @@ gem 'jsonapi.rb'
 # Simple, efficient background processing for Ruby
 gem 'sidekiq'
 
+# provides support for Cross-Origin Resource Sharing (CORS)
+gem 'rack-cors'
+
 # Linting
 gem 'brakeman'
 gem 'bundler-audit'

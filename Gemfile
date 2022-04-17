@@ -59,6 +59,9 @@ gem 'sidekiq'
 # provides support for Cross-Origin Resource Sharing (CORS)
 gem 'rack-cors'
 
+# a flexible authentication solution
+gem 'devise'
+
 # Linting
 gem 'brakeman'
 gem 'bundler-audit'

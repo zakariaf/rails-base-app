@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, defaults: { format: :json }
   mount Sidekiq::Web => '/sidekiq'
 
   root to: 'application#website'

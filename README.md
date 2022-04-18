@@ -99,13 +99,15 @@ cd baseapp
 ### Copy example file
 
 ```sh
-cp .env.example .env
+cp .env.example .env.local
 ```
 
 Environment variables defined here(`.env`), feel free to change or add variables as needed.
 This file is ignored from git (Check `.gitignore`) so it will never be commit.
 
-If you use different values for environment variables in other envs, e.g. **test**, you need to copy one more: `.env.test`
+If you use different values for environment variables in other envs, e.g. **test**, you need to copy one more: `.env.test.local`
+
+**Note** `.env.test` is used by github workflows.
 
 ### Setup the project
 

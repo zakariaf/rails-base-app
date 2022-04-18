@@ -90,6 +90,8 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  # RSpec matchers for JSON API.
+  gem 'jsonapi-rspec'
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'factory_bot_rails'

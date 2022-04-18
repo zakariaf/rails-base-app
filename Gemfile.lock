@@ -135,6 +135,9 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jsonapi-rspec (0.0.11)
+      rspec-core
+      rspec-expectations
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
     jsonapi.rb (2.0.0)
@@ -346,6 +349,7 @@ DEPENDENCIES
   fasterer
   has_scope
   jbuilder
+  jsonapi-rspec
   jsonapi-serializer
   jsonapi.rb
   license_finder

@@ -52,4 +52,16 @@ describe RegistrationsController, type: :request do
       expect(json).to have_error('code' => 'taken')
     end
   end
+
+  context 'when password and confirmation are not match' do
+    let(:password_confirmation) { '123456Aa!' }
+
+    it 'returns 400' do
+      expect(response.status).to eq(400)
+    end
+
+    it 'returns the confirmation message' do
+      expect(json).to have_error('code' => 'confirmation')
+    end
+  end
 end

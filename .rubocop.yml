@@ -24,3 +24,9 @@ Metrics/BlockLength:
     - draw
     - configure
     - group
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10

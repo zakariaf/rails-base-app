@@ -50,6 +50,8 @@ gem 'has_scope'
 
 # A fast JSON:API serializer for Ruby Objects.
 gem 'jsonapi-serializer'
+# provides some features to use jsonapi-serializer easier
+gem 'jsonapi.rb'
 
 # Simple, efficient background processing for Ruby
 gem 'sidekiq'

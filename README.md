@@ -34,7 +34,7 @@ Order by the commit I did:
 9. [Pry](https://github.com/pry/pry) ([commit](https://github.com/zakariaf/rails-base-app/commit/fd94d91fda2e28293266b3f210801e8462fad4cb))
 10. [Pagy](https://github.com/ddnexus/pagy) ([commit1](https://github.com/zakariaf/rails-base-app/commit/f5c4839ba05fe8a927bb18e06e89b0fb20f12045)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/090194eb6912a72ec23349afbca1d3e211204769))
 11. [HasScope](https://github.com/heartcombo/has_scope) ([commit](https://github.com/zakariaf/rails-base-app/commit/a1564e9f8ee645b5b6394bc99608d57eef95b830))
-12. [JSON:API serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) ([commit](https://github.com/zakariaf/rails-base-app/commit/c57cb9db2c0df761e48bdae77971d5fd093033bb))
+12. [JSON:API serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) A fast JSON:API serializer for Ruby Objects ([commit](https://github.com/zakariaf/rails-base-app/commit/c57cb9db2c0df761e48bdae77971d5fd093033bb)) and [jsonapi.rb](https://github.com/stas/jsonapi.rb) which provide some features for `jsonapi-serializer` [PR](https://github.com/zakariaf/rails-base-app/pull/9)
 13. [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
 14. [Redis](https://redis.io/) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
 15. [Sidekiq](https://github.com/mperham/sidekiq) ([commit](https://github.com/zakariaf/rails-base-app/commit/f7b759d9d42ce3444a04978fe2cbfc66cd120250))

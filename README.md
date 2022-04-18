@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="https://rubyonrails.org/"><img width="300" src="https://zakaria.dev/assets/images/banner/Ruby_On_Rails_Logo.png" alt="Ruby On Rails"></a>
-  <a href="https://vite-ruby.netlify.app/"><img width="120" src="https://zakaria.dev/assets/images/banner/vite_ruby.svg" alt="Vite Ruby"></a>
-  <a href="https://vuejs.org/"><img width="100" src="https://zakaria.dev/assets/images/banner/vuejs-logo.png" alt="Vue.js"></a>
+  <a href="https://rubyonrails.org/"><img width="300" src="https://zakaria.dev/assets/images/rails_base_app/Ruby_On_Rails_Logo.png" alt="Ruby On Rails"></a>
+  <a href="https://vite-ruby.netlify.app/"><img width="120" src="https://zakaria.dev/assets/images/rails_base_app/vite_ruby.svg" alt="Vite Ruby"></a>
+  <a href="https://vuejs.org/"><img width="100" src="https://zakaria.dev/assets/images/rails_base_app/vuejs-logo.png" alt="Vue.js"></a>
 </p>
 
 # An example Rails 7 app
@@ -73,6 +73,68 @@ Order by the commit I did:
 24. [overcommit](https://github.com/sds/overcommit) to manage and configure Git hooks by managing all healthy app tools. you can check `.overcommit.yml` to enable or disable tools. ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
 25. Enabling github action to run `overcommit` after push and pull requests in github. Check `.github/workflows/lint.yml` to see the github configs ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
 
+## Auth
+
+26. [Devise](https://github.com/heartcombo/devise) and [Devise::JWT](https://github.com/waiting-for-dev/devise-jwt) JWT authentication solution [Backend PR](https://github.com/zakariaf/rails-base-app/pull/6)
+
+We are using JWT to authentication using Devise and Devise::JWT gems. If you send a request to log in, the successful response will give you a header called `Authorization` which has the JWT token as value. and you need to add this header and its value to all of your requests.
+
+Predefined auth routes:
+
+### `/signup`
+
+**Request**:
+
+```
+curl -XPOST -H "Content-Type: application/json" -d '{ "user": { "email": "test@example.com", "password": "12345678", "password_confirmation": "12345678" } }' http://localhost:3000/signup
+```
+
+**Response**: Returns the details of the created user
+
+```
+{"data":{"id":"4","type":"user","attributes":{"email":"test@example.com","sign_in_count":1,"created_at":"2022-04-18T17:49:06.798Z"}}}
+```
+
+### `/login`
+
+**Request**:
+
+```bash
+curl -XPOST -i -H "Content-Type: application/json" -d '{ "user": { "email": "test@example.com", "password": "12345678" } }' http://localhost:3000/login
+```
+
+**Response**: includes `Authorization` in header and details of the loggedin user
+
+```bash
+HTTP/1.1 200 OK
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+....
+Content-Type: application/vnd.api+json; charset=utf-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjUwMzA0MjU3LCJleHAiOjE2NTAzOTA2NTcsImp0aSI6IjM4ZmI4ZGIyLWVlMjgtNDg2Yy05YjE5LTA2NWVmYmQ0ZGE4MCJ9.p8766vPrhiGpPyV2FdShw1ljBx2Os3D1oE_rPjjAYrY
+...
+
+{"data":{"id":"4","type":"user","attributes":{"email":"test@example.com","sign_in_count":2,"created_at":"2022-04-18T17:49:06.798Z"}}}
+```
+
+<img width="400" src="https://zakaria.dev/assets/images/rails_base_app/login.png" alt="Login">
+
+### `/logout`
+
+**Request**: includes `Authorization` and its JWT token in the header of `DELETE` request
+
+```bash
+curl -XDELETE -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjUwMzA0MjU3LCJleHAiOjE2NTAzOTA2NTcsImp0aSI6IjM4ZmI4ZGIyLWVlMjgtNDg2Yy05YjE5LTA2NWVmYmQ0ZGE4MCJ9.p8766vPrhiGpPyV2FdShw1ljBx2Os3D1oE_rPjjAYrY" -H "Content-Type: application/json" http://localhost:3000/logout
+```
+
+**Response**: nothing
+
+<img width="400" src="https://zakaria.dev/assets/images/rails_base_app/logout.png" alt="Logout">
+
+**Note** We are using JWT to authentication, it means you can use this Rails base app as a **vanilla rails app** (Backend and frontend together), or as a **Rails API app**. both you can use.
+
 ## Apps
 
 I always prefer to have two apps for my projects, one for the part that will be shown public (I called it **Website**), and the second one for the part that you are managing there (I called it **Panel**), simplify you need to log in to have access there.
@@ -99,13 +161,15 @@ cd baseapp
 ### Copy example file
 
 ```sh
-cp .env.example .env
+cp .env.example .env.local
 ```
 
 Environment variables defined here(`.env`), feel free to change or add variables as needed.
 This file is ignored from git (Check `.gitignore`) so it will never be commit.
 
-If you use different values for environment variables in other envs, e.g. **test**, you need to copy one more: `.env.test`
+If you use different values for environment variables in other envs, e.g. **test**, you need to copy one more: `.env.test.local`
+
+**Note** `.env.test` is used by github workflows.
 
 ### Setup the project
 

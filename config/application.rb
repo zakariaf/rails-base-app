@@ -43,5 +43,7 @@ module BaseApp
       ActiveSupport::SecurityUtils.secure_compare(username, ENV.fetch('SIDEKIQ_WEB_USERNAME', 'sidekiq-web-dashboard')) &&
         ActiveSupport::SecurityUtils.secure_compare(password, ENV.fetch('SIDEKIQ_WEB_PASSWORD', 'sidekiq-web-123'))
     end
+
+    config.action_mailer.default_url_options = { host: ENV['DEFAULT_HOST'] }
   end
 end

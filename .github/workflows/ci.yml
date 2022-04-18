@@ -1,0 +1,81 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install Yarn
+        run: |
+          npm install yarn
+          yarn --version
+          yarn install
+
+      - name: Prepare environment
+        run: |
+          bundle exec overcommit --sign
+          bundle exec overcommit --sign pre-commit
+
+      - name: Run all checks
+        run: SKIP=AuthorName,AuthorEmail bundle exec overcommit --run
+
+  rspec:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options:
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+        options: --entrypoint redis-server
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Install dependent libraries
+        run: sudo apt-get install libpq-dev
+
+      - name: Create DB
+        run: |
+          bundle exec rails db:reset
+
+      - name: Run tests
+        run: bundle exec rspec

@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users, defaults: { format: :json }
   mount Sidekiq::Web => '/sidekiq'
+  devise_for :users, defaults: { format: :json },
+                     path: '',
+                     path_names: {
+                       registration: 'signup'
+                     },
+                     controllers: {
+                       registrations: 'registrations'
+                     }
 
   root to: 'application#website'
   get '/panel(/*path)', to: 'application#panel', as: :panel

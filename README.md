@@ -75,7 +75,7 @@ Order by the commit I did:
 
 ## Auth
 
-26. [Devise](https://github.com/heartcombo/devise) and [Devise::JWT](https://github.com/waiting-for-dev/devise-jwt) JWT authentication solution [Backend PR](https://github.com/zakariaf/rails-base-app/pull/6)
+26. [Devise](https://github.com/heartcombo/devise) and [Devise::JWT](https://github.com/waiting-for-dev/devise-jwt) JWT authentication solution [Backend PR1](https://github.com/zakariaf/rails-base-app/pull/6), [Backend PR2](https://github.com/zakariaf/rails-base-app/pull/12)
 
 We are using JWT to authentication using Devise and Devise::JWT gems. If you send a request to log in, the successful response will give you a header called `Authorization` which has the JWT token as value. and you need to add this header and its value to all of your requests.
 

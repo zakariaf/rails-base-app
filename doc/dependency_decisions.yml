@@ -68,4 +68,5 @@
     :why: 'All licensing terms fulfilled; License: LGPL (https://github.com/mperham/sidekiq/blob/v6.4.1/LICENSE)'
     :versions:
     - 6.4.1
+    - 6.4.2
     :when: 2022-04-13 03:51:20.617234000 Z

@@ -35,7 +35,7 @@ Order by the commit I did:
 10. [Pagy](https://github.com/ddnexus/pagy) ([commit1](https://github.com/zakariaf/rails-base-app/commit/f5c4839ba05fe8a927bb18e06e89b0fb20f12045)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/090194eb6912a72ec23349afbca1d3e211204769))
 11. [HasScope](https://github.com/heartcombo/has_scope) ([commit](https://github.com/zakariaf/rails-base-app/commit/a1564e9f8ee645b5b6394bc99608d57eef95b830))
 12. [JSON:API serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) A fast JSON:API serializer for Ruby Objects ([commit](https://github.com/zakariaf/rails-base-app/commit/c57cb9db2c0df761e48bdae77971d5fd093033bb))
-    - [jsonapi.rb](https://github.com/stas/jsonapi.rb) which provides some features for `jsonapi-serializer` [PR](https://github.com/zakariaf/rails-base-app/pull/9) and [commit](https://github.com/zakariaf/rails-base-app/commit/b463d3a024513040c52b0745d042ee1fd9ea96aa)
+    - [jsonapi.rb](https://github.com/stas/jsonapi.rb) which provides some features for `jsonapi-serializer` [PR](https://github.com/zakariaf/rails-base-app/pull/9), [commit](https://github.com/zakariaf/rails-base-app/commit/b463d3a024513040c52b0745d042ee1fd9ea96aa) and [PR2](https://github.com/zakariaf/rails-base-app/pull/13)
     - [jsonapi-rspec](https://github.com/jsonapi-rb/jsonapi-rspec) which provides some beautiful RSpec matchers for JSON API [PR](https://github.com/zakariaf/rails-base-app/pull/10)
 13. [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
 14. [Redis](https://redis.io/) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))

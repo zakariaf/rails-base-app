@@ -4,8 +4,8 @@ require 'rails_helper'
 
 describe SessionsController, type: :request do
   let(:user) { create(:user) }
-  let(:login_url) { '/login' }
-  let(:logout_url) { '/logout' }
+  let(:login_url) { '/users/login' }
+  let(:logout_url) { '/users/logout' }
 
   context 'when logging in' do
     before do

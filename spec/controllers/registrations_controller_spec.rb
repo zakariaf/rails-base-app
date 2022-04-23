@@ -28,8 +28,9 @@ describe RegistrationsController, type: :request do
       expect(response.status).to eq(200)
     end
 
-    it 'returns a token' do
-      expect(response.headers['Authorization']).to be_present
+    it 'does not return token' do
+      # we need to login after registartion
+      expect(response.headers['Authorization']).to be_nil
     end
 
     it 'returns the attributes' do

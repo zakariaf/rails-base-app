@@ -52,6 +52,7 @@ gem 'has_scope'
 gem 'jsonapi-serializer'
 # provides some features to use jsonapi-serializer easier
 gem 'jsonapi.rb'
+gem 'ransack'
 
 # Simple, efficient background processing for Ruby
 gem 'sidekiq'

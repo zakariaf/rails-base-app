@@ -46,7 +46,7 @@ Order by the commit I did:
 
 17. [Vite](https://github.com/ElMassimo/vite_ruby) Removing importmaps and all frontend libraries and Use Vite instead ([PR](https://github.com/zakariaf/rails-base-app/pull/1))
 18. Code quality and format (Check **Healthy app/Frontend** part)
-19. [Vue.js](https://vuejs.org/) Vue.js version 3 ([PR](https://github.com/zakariaf/rails-base-app/pull/4))
+19. [Vue.js](https://vuejs.org/) Vue.js version 3 ([PR](https://github.com/zakariaf/rails-base-app/pull/4) , [PR-fixbug](https://github.com/zakariaf/rails-base-app/pull/11))
 
 ### Healthy app
 

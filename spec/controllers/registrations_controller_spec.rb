@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe RegistrationsController, type: :request do
-  let(:signup_url) { '/signup' }
+  let(:signup_url) { '/users/signup' }
 
   let!(:existing_user) { create(:user) }
   let(:email) { Faker::Internet.email }

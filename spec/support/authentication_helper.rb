@@ -2,7 +2,7 @@
 
 module AuthenticationHelper
   def login(user)
-    post '/login', params: {
+    post user_session_path, params: {
       user: {
         email: user.email,
         password: user.password

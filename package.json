@@ -7,8 +7,10 @@
     "dev": "./bin/vite dev"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "vue": "^3.2.33",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.0.15",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.31",

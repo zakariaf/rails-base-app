@@ -47,6 +47,7 @@
     :why: 'All licensing terms fulfilled; License: Brakeman Public Use License (https://github.com/presidentbeef/brakeman/blob/v5.2.2/LICENSE.md)'
     :versions:
     - 5.2.2
+    - 5.2.3
     :when: 2022-04-13 03:49:23.678617000 Z
 - - :approve
   - bundler-audit

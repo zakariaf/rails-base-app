@@ -4,8 +4,6 @@
       <div class="form-bg py-30 px-50">
         <span class="header pb-25">Create your account</span>
 
-        <span v-if="showMessage" class="header pb-25"> You've clicked on Submit button </span>
-
         <form @submit.prevent="submit">
           <div class="field pb-25">
             <label for="email">Email</label>
@@ -48,12 +46,19 @@ export default {
         password: '',
         password_confirmation: '',
       },
-      showMessage: false,
     };
   },
   methods: {
     submit() {
-      this.showMessage = true;
+      console.log('this.user', this.user);
+      this.$store.dispatch('auth/register', this.user).then(
+        (res) => {
+          console.log('success', res);
+        },
+        (error) => {
+          console.log('error', error);
+        },
+      );
     },
   },
 };

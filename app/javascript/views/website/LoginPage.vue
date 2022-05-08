@@ -44,9 +44,29 @@ export default {
       showMessage: false,
     };
   },
+  computed: {
+    loggedIn() {
+      return this.$store.state.auth.status.loggedIn;
+    },
+  },
+  created() {
+    if (this.loggedIn) {
+      this.redirectToPanel();
+    }
+  },
   methods: {
     submit() {
-      this.showMessage = true;
+      this.$store.dispatch('auth/login', this.user).then(
+        () => {
+          this.redirectToPanel();
+        },
+        (error) => {
+          console.log('error', error);
+        },
+      );
+    },
+    redirectToPanel() {
+      window.location.href = '/panel/';
     },
   },
 };

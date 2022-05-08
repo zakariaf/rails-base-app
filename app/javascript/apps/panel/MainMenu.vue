@@ -12,7 +12,14 @@ export default {
   },
   methods: {
     logout() {
-      window.location.href = '/';
+      this.$store.dispatch('auth/logout').then(
+        () => {
+          window.location.href = '/';
+        },
+        (error) => {
+          console.log('error', error);
+        },
+      );
     },
   },
 };

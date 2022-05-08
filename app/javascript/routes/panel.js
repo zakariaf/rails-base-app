@@ -1,4 +1,4 @@
-const Index = () => import('@/views/panel/IndexPage.vue');
+const Index = () => import('@/pages/panel/IndexPage.vue');
 
 const routes = [
   {

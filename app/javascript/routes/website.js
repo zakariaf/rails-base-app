@@ -1,7 +1,7 @@
-const Index = () => import('@/views/website/IndexPage.vue');
-const About = () => import('@/views/website/AboutPage.vue');
-const Login = () => import('@/views/website/LoginPage.vue');
-const Signup = () => import('@/views/website/SignupPage.vue');
+const Index = () => import('@/pages/website/IndexPage.vue');
+const About = () => import('@/pages/website/AboutPage.vue');
+const Login = () => import('@/pages/website/LoginPage.vue');
+const Signup = () => import('@/pages/website/SignupPage.vue');
 
 const routes = [
   {

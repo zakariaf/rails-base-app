@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from '@/apps/panel/MainLayout.vue';
+import App from '@/layouts/panel/MainLayout.vue';
 import router from '@/routers/panel';
 import store from '@/store';
 import '@/assets/css/panel.scss';

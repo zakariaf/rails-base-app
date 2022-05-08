@@ -1,18 +1,20 @@
 <p align="center">
   <a href="https://rubyonrails.org/"><img width="300" src="https://zakaria.dev/assets/images/rails_base_app/Ruby_On_Rails_Logo.png" alt="Ruby On Rails"></a>
-  <a href="https://vite-ruby.netlify.app/"><img width="120" src="https://zakaria.dev/assets/images/rails_base_app/vite_ruby.svg" alt="Vite Ruby"></a>
-  <a href="https://vuejs.org/"><img width="100" src="https://zakaria.dev/assets/images/rails_base_app/vuejs-logo.png" alt="Vue.js"></a>
+  <a href="https://vite-ruby.netlify.app/" style="margin-left: 20px"><img width="110" src="https://zakaria.dev/assets/images/rails_base_app/vite_ruby.svg" alt="Vite Ruby"></a>
+  <a href="https://vuejs.org/" style="margin-left: 20px"><img width="90" src="https://zakaria.dev/assets/images/rails_base_app/vuejs-logo.png" alt="Vue.js"></a>
 </p>
 
 # An example Rails 7 app
 
-[![](https://badgen.net/badge/Rails/7.0.2.3/red)](https://github.com/zakariaf/rails-base-app/blob/main/Gemfile.lock) [![](https://badgen.net/badge/Ruby/3.1.2/red)](https://github.com/zakariaf/rails-base-app/blob/main/.ruby-version) [![](https://img.shields.io/badge/dynamic/json?color=red&label=Vite&query=%24.devDependencies.vite&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Vue&query=%24.dependencies.vue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![GitHub license](https://img.shields.io/github/license/zakariaf/rails-base-app)](https://github.com/zakariaf/rails-base-app/blob/main/LICENSE)
+[![](https://badgen.net/badge/Rails/7.0.2.4/red)](https://github.com/zakariaf/rails-base-app/blob/main/Gemfile.lock) [![](https://badgen.net/badge/Ruby/3.1.2/red)](https://github.com/zakariaf/rails-base-app/blob/main/.ruby-version) [![](https://img.shields.io/badge/dynamic/json?color=red&label=Vite&query=%24.devDependencies.vite&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Vue&query=%24.dependencies.vue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![GitHub license](https://img.shields.io/github/license/zakariaf/rails-base-app)](https://github.com/zakariaf/rails-base-app/blob/main/LICENSE)
 
 **This app is using Rails 7, Ruby 3, Vite and Vue 3** You could use this example app as a base for your new project, or as a tutorial that tells you which steps you need to start a project from scratch
 
 This example app includes some gems that I'm using them for a long time. it wires up
 a number of things you might use in a real world Rails app, but at the same time it's not
 loaded up with a million personal opinions.
+
+- As [Webpacker](https://github.com/rails/webpacker#webpacker-has-been-retired-) has been retired, we are using [Vite](https://vite-ruby.netlify.app/) instead. And it's not fair if I don't say this: **Vite** is incredible.
 
 ## Tech stack
 

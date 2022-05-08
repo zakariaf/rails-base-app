@@ -7,7 +7,7 @@
     "dev": "./bin/vite dev"
   },
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^0.27.2",
     "vue": "^3.2.33",
     "vue-router": "^4.0.15",
     "vuex": "^4.0.2"

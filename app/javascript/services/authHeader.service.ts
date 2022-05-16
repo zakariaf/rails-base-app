@@ -4,6 +4,8 @@ export default function authHeader() {
   if (token) {
     return { Authorization: token };
   } else {
-    return {};
+    return {
+      Authorization: '',
+    };
   }
 }

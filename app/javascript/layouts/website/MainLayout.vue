@@ -10,15 +10,6 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import MainMenu from './MainMenu.vue';
-
-export default {
-  components: {
-    MainMenu,
-  },
-  data() {
-    return {};
-  },
-};
 </script>

@@ -9,8 +9,15 @@
       <p>Vue.js</p>
     </div>
     <ul>
-      <li class="active" @click="$router.push({ name: 'index' })">
-        <span class="item">My Dashboard</span>
+      <li class="active">
+        <router-link
+          :to="{
+            name: 'index',
+          }"
+          class="item"
+        >
+          My Dashboard
+        </router-link>
       </li>
       <li>
         <span class="item">Posts</span>
@@ -34,23 +41,4 @@
   </nav>
 </template>
 
-<script>
-export default {
-  data() {
-    const menuItems = [
-      { title: 'Index', routeName: 'index' },
-      { title: 'About', routeName: 'about' },
-      { title: 'Sign in', routeName: 'login' },
-      { title: 'Sign up', routeName: 'signup' },
-    ];
-    return {
-      menuItems,
-    };
-  },
-  methods: {
-    goTo(item) {
-      this.$router.push({ name: item.routeName });
-    },
-  },
-};
-</script>
+<script setup lang="ts"></script>

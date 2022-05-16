@@ -14,17 +14,7 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import MainMenu from './MainMenu.vue';
 import MainSidebar from './MainSidebar.vue';
-
-export default {
-  components: {
-    MainMenu,
-    MainSidebar,
-  },
-  data() {
-    return {};
-  },
-};
 </script>

@@ -10,13 +10,16 @@ module.exports = {
     'plugin:vue/vue3-strongly-recommended',
     'plugin:vue/vue3-recommended',
     'plugin:import/recommended',
+    'plugin:@typescript-eslint/recommended',
+    '@vue/eslint-config-typescript/recommended',
+    '@vue/eslint-config-prettier',
     'prettier',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['vue'],
+  plugins: ['@typescript-eslint', 'vue'],
   rules: {
     'vue/attributes-order': 'error',
     'vue/order-in-components': 'error',
@@ -28,7 +31,7 @@ module.exports = {
         alias: {
           '@': './app/javascript',
         },
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue', '.d.ts'],
       },
     },
   },

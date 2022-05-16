@@ -1,10 +1,10 @@
 import axios from 'axios';
-import authHeader from './auth-header';
+import authHeader from './authHeader.service';
 import { apis } from './apis';
+import { IUserLogin } from '@/typings/general';
 
 class AuthService {
-  login(user) {
-    console.log('apis', apis);
+  async login(user: IUserLogin) {
     return axios
       .post(apis.auth.login, {
         user: {
@@ -23,11 +23,11 @@ class AuthService {
       });
   }
 
-  logout() {
-    return axios.delete(apis.auth.logout, { headers: authHeader() }).then(this.clearCache());
+  async logout() {
+    return axios.delete(apis.auth.logout, { headers: authHeader() }).then(() => this.clearCache());
   }
 
-  register(user) {
+  async register(user: IUserLogin) {
     return axios.post(apis.auth.signup, {
       user: {
         email: user.email,
@@ -41,10 +41,10 @@ class AuthService {
     localStorage.removeItem('token');
   }
 
-  handleResponse(response) {
+  async handleResponse(response: any) {
     if (response.status === 401) {
       this.clearCache();
-      location.reload(true);
+      location.reload();
 
       const error = response.data && response.data.message;
       return Promise.reject(error);
@@ -52,6 +52,18 @@ class AuthService {
 
     return Promise.resolve(response);
   }
+
+  getUser() {
+    const user = localStorage.getItem('user');
+
+    if (user) {
+      return JSON.parse(user);
+    }
+
+    return null;
+  }
 }
 
-export default new AuthService();
+const instance = new AuthService();
+
+export default instance;

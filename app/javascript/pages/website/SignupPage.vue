@@ -36,32 +36,27 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'SignupPage',
-  data() {
-    return {
-      user: {
-        email: '',
-        password: '',
-        password_confirmation: '',
-      },
-    };
-  },
-  methods: {
-    submit() {
-      console.log('this.user', this.user);
-      this.$store.dispatch('auth/register', this.user).then(
-        (res) => {
-          console.log('success', res);
-        },
-        (error) => {
-          console.log('error', error);
-        },
-      );
+<script setup lang="ts">
+import { useAuthStore } from '@/stores/auth.store';
+import { reactive } from 'vue';
+import { IRegisterUser } from '@/typings/general';
+
+const authStore = useAuthStore();
+
+const user = reactive<IRegisterUser>({
+  email: '',
+  password: '',
+  password_confirmation: '',
+});
+
+const submit = () => {
+  authStore.register(user).then(
+    (res) => {
+      console.log('success', res);
     },
-  },
+    (error) => {
+      console.log('error', error);
+    },
+  );
 };
 </script>
-
-<style></style>

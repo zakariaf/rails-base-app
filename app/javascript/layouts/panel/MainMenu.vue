@@ -5,22 +5,11 @@
   </ul>
 </template>
 
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {
-    logout() {
-      this.$store.dispatch('auth/logout').then(
-        () => {
-          window.location.href = '/';
-        },
-        (error) => {
-          console.log('error', error);
-        },
-      );
-    },
-  },
+<script setup lang="ts">
+import { useAuthStore } from '@/stores/auth.store';
+const authStore = useAuthStore();
+
+const logout = () => {
+  authStore.logout();
 };
 </script>

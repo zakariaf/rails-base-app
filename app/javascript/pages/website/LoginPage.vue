@@ -32,44 +32,41 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'LoginPage',
-  data() {
-    return {
-      user: {
-        email: '',
-        password: '',
-      },
-      showMessage: false,
-    };
-  },
-  computed: {
-    loggedIn() {
-      return this.$store.state.auth.status.loggedIn;
-    },
-  },
-  created() {
-    if (this.loggedIn) {
-      this.redirectToPanel();
-    }
-  },
-  methods: {
-    submit() {
-      this.$store.dispatch('auth/login', this.user).then(
-        () => {
-          this.redirectToPanel();
-        },
-        (error) => {
-          console.log('error', error);
-        },
-      );
-    },
-    redirectToPanel() {
-      window.location.href = '/panel/';
-    },
-  },
+<script setup lang="ts">
+import { useAuthStore } from '@/stores/auth.store';
+import { IUserLogin } from '@/typings/general';
+import { computed } from '@vue/reactivity';
+import { reactive, ref, onMounted } from 'vue';
+
+const authStore = useAuthStore();
+
+const user = reactive<IUserLogin>({
+  email: '',
+  password: '',
+});
+
+const redirectToPanel = () => {
+  window.location.href = '/panel/';
+};
+
+const showMessage = ref(false);
+
+const loggedIn = computed(() => authStore.isAuthenticated);
+
+onMounted(() => {
+  if (loggedIn.value) {
+    redirectToPanel();
+  }
+});
+
+const submit = () => {
+  authStore
+    .login(user)
+    .then(() => {
+      redirectToPanel();
+    })
+    .catch((error) => {
+      console.log('error', error);
+    });
 };
 </script>
-
-<style lang="scss" scoped></style>

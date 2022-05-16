@@ -1,6 +1,6 @@
 import AuthService from '@/services/auth.service';
 import { IRegisterUser, IUserLogin } from '@/typings/general';
-import { defineStore } from 'pinia';
+import { acceptHMRUpdate, defineStore } from 'pinia';
 
 interface IState {
   user: Record<string, any> | null;
@@ -24,26 +24,29 @@ export const useAuthStore = defineStore('auth.store', {
           return Promise.resolve(user);
         },
         (error) => {
-          // commit('loginFailure');
           return Promise.reject(error);
         },
       );
     },
-    logout() {
-      AuthService.logout();
-      // commit('logout');
+    async logout() {
+      AuthService.logout().then(() => {
+        window.location.href = '/';
+        this.user = null;
+      });
     },
     register(user: IRegisterUser) {
       return AuthService.register(user).then(
         (response) => {
-          // commit('registerSuccess');
           return Promise.resolve(response.data);
         },
         (error) => {
-          // commit('registerFailure');
           return Promise.reject(error);
         },
       );
     },
   },
 });
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useAuthStore, import.meta.hot));
+}

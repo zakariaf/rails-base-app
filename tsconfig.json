@@ -12,14 +12,17 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom", "es2015.promise", "es2017"],
+    "module": "ESNext",
+    "lib": ["es6", "dom", "es2015.promise", "es2017", "es2020"],
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+    "isolatedModules": true,
     "target": "es6",
     "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["node_modules/@types", "./app/javascript/typings"]
+    "typeRoots": ["node_modules/@types", "./app/javascript/typings"],
+    "types": ["vite/client"]
   },
   "include": ["./app/javascript/**/*"]
 }

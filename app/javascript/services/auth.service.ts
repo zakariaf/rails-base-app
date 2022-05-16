@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from './authHeader.service';
 import { apis } from './apis';
-import { IUserLogin } from '@/typings/general';
+import { IUserLogin, IRegisterUser } from '@/typings/general';
 
 class AuthService {
   async login(user: IUserLogin) {
@@ -27,12 +27,9 @@ class AuthService {
     return axios.delete(apis.auth.logout, { headers: authHeader() }).then(() => this.clearCache());
   }
 
-  async register(user: IUserLogin) {
+  async register(user: IRegisterUser) {
     return axios.post(apis.auth.signup, {
-      user: {
-        email: user.email,
-        password: user.password,
-      },
+      user,
     });
   }
 

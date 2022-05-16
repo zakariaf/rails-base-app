@@ -40,6 +40,9 @@
 import { useAuthStore } from '@/stores/auth.store';
 import { reactive } from 'vue';
 import { IRegisterUser } from '@/typings/general';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const authStore = useAuthStore();
 
@@ -51,8 +54,8 @@ const user = reactive<IRegisterUser>({
 
 const submit = () => {
   authStore.register(user).then(
-    (res) => {
-      console.log('success', res);
+    () => {
+      router.push({ name: 'login' });
     },
     (error) => {
       console.log('error', error);

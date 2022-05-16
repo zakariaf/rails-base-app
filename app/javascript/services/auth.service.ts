@@ -7,10 +7,7 @@ class AuthService {
   async login(user: IUserLogin) {
     return axios
       .post(apis.auth.login, {
-        user: {
-          email: user.email,
-          password: user.password,
-        },
+        user,
       })
       .then(this.handleResponse)
       .then((response) => {

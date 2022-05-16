@@ -12,7 +12,6 @@
 
           <div class="field pb-25">
             <label for="password">Password</label>
-            {{ user.com }}
             <input v-model="user.password" type="password" />
           </div>
 

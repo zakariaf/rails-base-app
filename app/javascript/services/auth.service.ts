@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authHeader from './authHeader.service';
 import { apis } from './apis';
-import { IUserLogin, IRegisterUser } from '@/typings/general';
+import { IUserLogin, IRegisterUser } from '@/types/general';
 
 class AuthService {
   async login(user: IUserLogin) {

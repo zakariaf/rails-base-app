@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "lint": "vue-tsc --noEmit && eslint 'app/javascript/**/*.{js,vue}' --fix",
+    "lint": "vue-tsc --noEmit && eslint 'app/javascript/**/*.{js,vue,ts,tsx}' --fix",
     "format": "prettier ./**/*.{js,css,scss,md,vue,json,ts} --write",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
@@ -33,13 +33,12 @@
     "sass": "^1.51.0",
     "typescript": "^4.6.4",
     "vite": "^2.9.8",
-    "vite-plugin-ruby": "^3.0.10",
+    "vite-plugin-ruby": "^3.0.12",
     "vue-tsc": "^0.34.15"
   },
   "lint-staged": {
-    "*.{js,vue}": [
-      "vue-tsc --noEmit",
-      "eslint --fix"
+    "*.{js,vue,ts,tsx}": [
+      "yarn lint"
     ],
     "*.{js,css,scss,md,vue,json}": "prettier --write"
   }

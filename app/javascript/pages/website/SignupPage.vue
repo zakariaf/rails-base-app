@@ -38,7 +38,7 @@
 <script setup lang="ts">
 import { useAuthStore } from '@/stores/auth.store';
 import { reactive } from 'vue';
-import { IRegisterUser } from '@/typings/general';
+import { IRegisterUser } from '@/types/general';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();

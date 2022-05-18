@@ -1,9 +1,9 @@
 import AuthService from '@/services/auth.service';
-import { IRegisterUser, IUserLogin } from '@/typings/general';
+import { IRegisterUser, IUserLogin } from '@/types/general';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 
 interface IState {
-  user: Record<string, any> | null;
+  user: Record<string, unknown> | null;
 }
 
 const initialState: IState = { user: AuthService.getUser() };

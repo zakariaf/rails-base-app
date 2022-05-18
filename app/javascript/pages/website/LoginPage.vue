@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { useAuthStore } from '@/stores/auth.store';
-import { IUserLogin } from '@/typings/general';
+import { IUserLogin } from '@/types/general';
 import { computed } from '@vue/reactivity';
 import { reactive, ref, onMounted } from 'vue';
 

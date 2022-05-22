@@ -17,9 +17,9 @@ export const useAuthStore = defineStore('auth.store', {
   actions: {
     login(user: IUserLogin) {
       return AuthService.login(user).then(
-        (userFromApi: AxiosResponse) => {
-          this.user = userFromApi.data;
-          return Promise.resolve(userFromApi);
+        (response: AxiosResponse) => {
+          this.user = response.data;
+          return Promise.resolve(response);
         },
         (error) => {
           return Promise.reject(error);

@@ -1,50 +1,36 @@
-import axios from 'axios';
-import authHeader from './authHeader.service';
-import { apis } from './apis';
 import { IUserLogin, IRegisterUser } from '@/types/general';
+import { login, logout, register } from '@/apis/auth.api';
+import { http, setHTTPHeader } from './http.service';
 
 class AuthService {
   async login(user: IUserLogin) {
-    return axios
-      .post(apis.auth.login, {
-        user,
-      })
-      .then(this.handleResponse)
-      .then((response) => {
-        if (response.headers.authorization) {
-          localStorage.setItem('user', JSON.stringify(response.data));
-          localStorage.setItem('token', response.headers.authorization);
-        }
+    return login(user).then((response) => {
+      if (response.headers.authorization) {
+        const token = response.headers.authorization;
+        localStorage.setItem('user', JSON.stringify(response.data));
+        localStorage.setItem('token', token);
+        setHTTPHeader({ Authorization: token });
+      }
 
-        return response.data;
-      });
-  }
-
-  async logout() {
-    return axios.delete(apis.auth.logout, { headers: authHeader() }).then(() => this.clearCache());
-  }
-
-  async register(user: IRegisterUser) {
-    return axios.post(apis.auth.signup, {
-      user,
+      return response.data;
     });
   }
 
-  clearCache() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
+  async logout() {
+    return logout().finally(() => {
+      delete http.defaults.headers.common['Authorization'];
+      this.clearCache();
+    });
   }
 
-  async handleResponse(response: any) {
-    if (response.status === 401) {
-      this.clearCache();
-      location.reload();
+  async register(user: IRegisterUser) {
+    return register(user);
+  }
 
-      const error = response.data && response.data.message;
-      return Promise.reject(error);
-    }
-
-    return Promise.resolve(response);
+  clearCache(): void {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    location.href = '/';
   }
 
   getUser() {
@@ -59,6 +45,10 @@ class AuthService {
     }
 
     return null;
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
   }
 }
 

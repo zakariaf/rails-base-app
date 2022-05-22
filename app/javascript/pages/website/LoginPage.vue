@@ -1,5 +1,5 @@
 <template>
-  <div class="form">
+  <div v-if="!loggedIn" class="form">
     <div class="form-box pt-25">
       <div class="form-bg py-30 px-50">
         <span class="header pb-25">Sign in to your account</span>
@@ -30,6 +30,7 @@
       </div>
     </div>
   </div>
+  <div class="text-center">Redirecting to panel</div>
 </template>
 
 <script setup lang="ts">

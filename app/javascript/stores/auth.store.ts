@@ -1,7 +1,7 @@
-import AuthService from '@/services/auth.service';
-import { IRegisterUser, IUserLogin } from '@/types/general';
 import { AxiosResponse } from 'axios';
 import { acceptHMRUpdate, defineStore } from 'pinia';
+import AuthService from '@/services/auth.service';
+import { IRegisterUser, IUserLogin } from '@/types/general';
 
 interface IState {
   user: Record<string, unknown> | null;

@@ -1,6 +1,6 @@
+import { AxiosResponse } from 'axios';
 import { http } from '@/services/http.service';
 import { IRegisterUser, IUserLogin } from '@/types/general';
-import { AxiosResponse } from 'axios';
 
 export const login = (user: IUserLogin): Promise<AxiosResponse> => {
   return http.post('users/login', { user });

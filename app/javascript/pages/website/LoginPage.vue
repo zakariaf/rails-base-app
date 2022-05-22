@@ -34,10 +34,10 @@
 </template>
 
 <script setup lang="ts">
+import { reactive, ref, onMounted, computed } from 'vue';
 import { useAuthStore } from '@/stores/auth.store';
 import { IUserLogin } from '@/types/general';
-import { computed } from '@vue/reactivity';
-import { reactive, ref, onMounted } from 'vue';
+import { showToast } from '@/utils/showToast';
 
 const authStore = useAuthStore();
 
@@ -67,7 +67,7 @@ const submit = () => {
       redirectToPanel();
     })
     .catch((error) => {
-      console.log('error', error);
+      showToast(error, 'error');
     });
 };
 </script>

@@ -1,7 +1,8 @@
 import { Component, createApp } from 'vue';
-import { pinia } from '@/stores';
 import { Router } from 'vue-router';
 import { VueQueryPlugin } from 'vue-query';
+import { globalProperties } from './globalProperties';
+import { pinia } from '@/stores';
 import { setHTTPHeader } from '@/services/http.service';
 import AuthService from '@/services/auth.service';
 
@@ -17,6 +18,7 @@ export const setupEntryPoint = (rootComponent: Component, router: Router) => {
   app.use(router);
   app.use(pinia);
   app.use(VueQueryPlugin);
+  app.config.globalProperties = globalProperties;
 
   app.mount('#app');
 };

@@ -24,6 +24,8 @@ module.exports = {
     'vue/attributes-order': 'error',
     'vue/order-in-components': 'error',
     'vue/require-default-prop': 'error',
+    'vue/multi-word-component-names': 'off',
+    'import/order': 'error',
   },
   settings: {
     'import/resolver': {

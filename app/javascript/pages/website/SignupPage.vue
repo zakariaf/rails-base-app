@@ -36,10 +36,11 @@
 </template>
 
 <script setup lang="ts">
-import { useAuthStore } from '@/stores/auth.store';
 import { reactive } from 'vue';
-import { IRegisterUser } from '@/types/general';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from '@/stores/auth.store';
+import { IRegisterUser } from '@/types/general';
+import { showToast } from '@/utils/showToast';
 
 const router = useRouter();
 
@@ -57,7 +58,7 @@ const submit = () => {
       router.push({ name: 'login' });
     },
     (error) => {
-      console.log('error', error);
+      showToast(error, 'error');
     },
   );
 };

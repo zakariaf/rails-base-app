@@ -1,6 +1,6 @@
+import { http, setHTTPHeader } from './http.service';
 import { IUserLogin, IRegisterUser } from '@/types/general';
 import { login, logout, register } from '@/apis/auth.api';
-import { http, setHTTPHeader } from './http.service';
 
 class AuthService {
   async login(user: IUserLogin) {

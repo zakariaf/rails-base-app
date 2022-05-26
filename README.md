@@ -8,9 +8,9 @@
 
 [![](https://badgen.net/badge/Rails/7.0.2.4/red)](https://github.com/zakariaf/rails-base-app/blob/main/Gemfile.lock) [![](https://badgen.net/badge/Ruby/3.1.2/red)](https://github.com/zakariaf/rails-base-app/blob/main/.ruby-version) [![](https://img.shields.io/badge/dynamic/json?color=red&label=Vite&query=%24.devDependencies.vite&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Vue&query=%24.dependencies.vue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![GitHub license](https://img.shields.io/github/license/zakariaf/rails-base-app)](https://github.com/zakariaf/rails-base-app/blob/main/LICENSE)
 
-**This app is using Rails 7, Ruby 3, Vite and Vue 3** You could use this example app as a base for your new project, or as a tutorial that tells you which steps you need to start a project from scratch
+**This app is using Rails 7, Ruby 3, Vite, Vue 3 and typescript** You could use this example app as a base for your new project, or as a tutorial that tells you which steps you need to start a project from scratch
 
-This example app includes some gems that I'm using them for a long time. it wires up
+This example app includes some gems and packages that I'm using them for a long time. it wires up
 a number of things you might use in a real world Rails app, but at the same time it's not
 loaded up with a million personal opinions.
 
@@ -19,42 +19,48 @@ loaded up with a million personal opinions.
 ## Tech stack
 
 I used `rails new baseapp -c tailwindcss -d postgresql` command to init the project to have based on importmaps and default configs, but I removed importmaps and tailwindcss and all default configs and moved to using Vite instead.
-You can see the list of gems that I use in the project with the link of the related commit, so you can easily find what I configured for each gem.
+You can see the list of gems that exist in the project with the link of the related commit, so you can easily find what we configured for each gem.
+
+**Note** there is a commit/branch for each gem/package and adding/changing a code in the repo, and you can see the list of the steps we did in order at the below. e.g. step 1 in the repo was **init project** and using **PostgreSQL**. step number 2 was adding **RSpec**, etc.
 
 ### Back-end
 
-Order by the commit I did:
-
-1. [PostgreSQL](https://www.postgresql.org/) ([init project](https://github.com/zakariaf/rails-base-app/commit/f62b5cfab5a58aff5f233d3f05b5e5b157d5a5c9))
-2. [RSpec](https://github.com/rspec/rspec-metagem) ([commit1](https://github.com/zakariaf/rails-base-app/commit/9363d5196130661481ebad2f4067f88b5558ed8e)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/98b97191858a41055c624a9668627a63efa2393f))
-3. [Factory Bot Rails](https://github.com/thoughtbot/factory_bot_rails) ([commit](https://github.com/zakariaf/rails-base-app/commit/6345a47aab301abf731678bc70a29af67c8d6d64))
-4. [Faker](https://github.com/faker-ruby/faker) ([commit](https://github.com/zakariaf/rails-base-app/commit/436743fccee0e9f2d72a2af556dcb2bccea0d44e))
-5. [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner) ([commit](https://github.com/zakariaf/rails-base-app/commit/653e37e65260ad1b28f699d08ddf206054800810))
-6. [SimpleCov](https://github.com/simplecov-ruby/simplecov) ([commit](https://github.com/zakariaf/rails-base-app/commit/a1e629b26bf45f008d27ca4ae1a794de65581e2c))
-7. Rubocop(Check the **Healthy app/Backend** part)
-8. [Annotate](https://github.com/ctran/annotate_models) ([commit](https://github.com/zakariaf/rails-base-app/commit/5c2a5d2480bbfdd7afd148fc08dc02bda324fc0e))
-9. [Pry](https://github.com/pry/pry) ([commit](https://github.com/zakariaf/rails-base-app/commit/fd94d91fda2e28293266b3f210801e8462fad4cb))
-10. [Pagy](https://github.com/ddnexus/pagy) ([commit1](https://github.com/zakariaf/rails-base-app/commit/f5c4839ba05fe8a927bb18e06e89b0fb20f12045)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/090194eb6912a72ec23349afbca1d3e211204769))
-11. [HasScope](https://github.com/heartcombo/has_scope) ([commit](https://github.com/zakariaf/rails-base-app/commit/a1564e9f8ee645b5b6394bc99608d57eef95b830))
-12. [JSON:API serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) A fast JSON:API serializer for Ruby Objects ([commit](https://github.com/zakariaf/rails-base-app/commit/c57cb9db2c0df761e48bdae77971d5fd093033bb))
-    - [jsonapi.rb](https://github.com/stas/jsonapi.rb) which provides some features for `jsonapi-serializer` [PR](https://github.com/zakariaf/rails-base-app/pull/9), [commit](https://github.com/zakariaf/rails-base-app/commit/b463d3a024513040c52b0745d042ee1fd9ea96aa) and [PR2](https://github.com/zakariaf/rails-base-app/pull/13)
-    - [jsonapi-rspec](https://github.com/jsonapi-rb/jsonapi-rspec) which provides some beautiful RSpec matchers for JSON API [PR](https://github.com/zakariaf/rails-base-app/pull/10)
-13. [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
-14. [Redis](https://redis.io/) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
-15. [Sidekiq](https://github.com/mperham/sidekiq) ([commit](https://github.com/zakariaf/rails-base-app/commit/f7b759d9d42ce3444a04978fe2cbfc66cd120250))
-16. [dotenv](https://github.com/bkeepers/dotenv) ([commit](https://github.com/zakariaf/rails-base-app/commit/3aaa696c4228aac2dac40ff42591f07dc74a62bb))
+- 1. [PostgreSQL](https://www.postgresql.org/) ([init project](https://github.com/zakariaf/rails-base-app/commit/f62b5cfab5a58aff5f233d3f05b5e5b157d5a5c9))
+- 2. [RSpec](https://github.com/rspec/rspec-metagem) ([commit1](https://github.com/zakariaf/rails-base-app/commit/9363d5196130661481ebad2f4067f88b5558ed8e)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/98b97191858a41055c624a9668627a63efa2393f))
+- 3. [Factory Bot Rails](https://github.com/thoughtbot/factory_bot_rails) ([commit](https://github.com/zakariaf/rails-base-app/commit/6345a47aab301abf731678bc70a29af67c8d6d64))
+- 4. [Faker](https://github.com/faker-ruby/faker) ([commit](https://github.com/zakariaf/rails-base-app/commit/436743fccee0e9f2d72a2af556dcb2bccea0d44e))
+- 5. [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner) ([commit](https://github.com/zakariaf/rails-base-app/commit/653e37e65260ad1b28f699d08ddf206054800810))
+- 6. [SimpleCov](https://github.com/simplecov-ruby/simplecov) ([commit](https://github.com/zakariaf/rails-base-app/commit/a1e629b26bf45f008d27ca4ae1a794de65581e2c))
+- 7. Rubocop(Check the [**Healthy app/Backend**](#healthy-app) part)
+- 8. [Annotate](https://github.com/ctran/annotate_models) ([commit](https://github.com/zakariaf/rails-base-app/commit/5c2a5d2480bbfdd7afd148fc08dc02bda324fc0e))
+- 9. [Pry](https://github.com/pry/pry) ([commit](https://github.com/zakariaf/rails-base-app/commit/fd94d91fda2e28293266b3f210801e8462fad4cb))
+- 10. [Pagy](https://github.com/ddnexus/pagy) ([commit1](https://github.com/zakariaf/rails-base-app/commit/f5c4839ba05fe8a927bb18e06e89b0fb20f12045)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/090194eb6912a72ec23349afbca1d3e211204769))
+- 11. [HasScope](https://github.com/heartcombo/has_scope) ([commit](https://github.com/zakariaf/rails-base-app/commit/a1564e9f8ee645b5b6394bc99608d57eef95b830))
+- 12. [JSON:API serializer](https://github.com/jsonapi-serializer/jsonapi-serializer) A fast JSON:API serializer for Ruby Objects ([commit](https://github.com/zakariaf/rails-base-app/commit/c57cb9db2c0df761e48bdae77971d5fd093033bb))
+  - [jsonapi.rb](https://github.com/stas/jsonapi.rb) which provides some features for `jsonapi-serializer` [PR](https://github.com/zakariaf/rails-base-app/pull/9), [commit](https://github.com/zakariaf/rails-base-app/commit/b463d3a024513040c52b0745d042ee1fd9ea96aa) and [PR2](https://github.com/zakariaf/rails-base-app/pull/13)
+  - [jsonapi-rspec](https://github.com/jsonapi-rb/jsonapi-rspec) which provides some beautiful RSpec matchers for JSON API [PR](https://github.com/zakariaf/rails-base-app/pull/10)
+- 13. [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
+- 14. [Redis](https://redis.io/) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
+- 15. [Sidekiq](https://github.com/mperham/sidekiq) ([commit](https://github.com/zakariaf/rails-base-app/commit/f7b759d9d42ce3444a04978fe2cbfc66cd120250))
+- 16. [dotenv](https://github.com/bkeepers/dotenv) ([commit](https://github.com/zakariaf/rails-base-app/commit/3aaa696c4228aac2dac40ff42591f07dc74a62bb))
 
 ### Front-end
 
-17. [Vite](https://github.com/ElMassimo/vite_ruby) Removing importmaps and all frontend libraries and Use Vite instead ([PR](https://github.com/zakariaf/rails-base-app/pull/1))
-18. Code quality and format (Check **Healthy app/Frontend** part)
-19. [Vue.js](https://vuejs.org/) Vue.js version 3 ([PR](https://github.com/zakariaf/rails-base-app/pull/4) , [PR-fixbug](https://github.com/zakariaf/rails-base-app/pull/11))
+- 17. [Vite](https://github.com/ElMassimo/vite_ruby) Removing importmaps and all frontend libraries and Use Vite instead ([PR](https://github.com/zakariaf/rails-base-app/pull/1))
+- 18. Code quality and format (Check **Healthy app/Frontend** part)
+- 19. [Vue.js](https://vuejs.org/) Vue.js version 3 ([PR](https://github.com/zakariaf/rails-base-app/pull/4) , [PR-fixbug](https://github.com/zakariaf/rails-base-app/pull/11))
+- 27. Enabling auth process(and make the app ready) which needed more packages:
+  - [axios](https://www.npmjs.com/package/axios)
+  - [pinia](https://pinia.vuejs.org/introduction.html) The official state management library for Vue. will be used instead of **Vuex**
+  - [vue-query](https://www.npmjs.com/package/vue-query)
+  - [@babel/types](https://babeljs.io/docs/en/babel-types)
+  - We start using [TypeScript](https://www.typescriptlang.org/) and [Vue3 compistion API](https://vuejs.org/guide/extras/composition-api-faq.html) here
 
 ### Healthy app
 
 #### Frontend
 
-- Code quality and format ([PR1](https://github.com/zakariaf/rails-base-app/pull/2), [PR2](https://github.com/zakariaf/rails-base-app/pull/3))
+- 18. Code quality and format ([PR1](https://github.com/zakariaf/rails-base-app/pull/2), [PR2](https://github.com/zakariaf/rails-base-app/pull/3))
   - [ESlint](https://eslint.org/)
   - [Eslint plugin vue](https://eslint.vuejs.org/rules/)
   - [Prettier](https://prettier.io/)
@@ -63,21 +69,21 @@ Order by the commit I did:
 
 #### Backend
 
-- [RuboCop](https://github.com/rubocop/rubocop) Code quality and format. First I added [rubocop-rails_config gem](https://github.com/toshimaru/rubocop-rails_config) by these two commits ([commit1](https://github.com/zakariaf/rails-base-app/commit/abfdce196721e517b9391b618093506fe062c499)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/89e675b793a0467b271e91c85215a6539bcc4b57)), but after a while, I removed this gem and added rubocop gem and its extensions separately in this [PR](https://github.com/zakariaf/rails-base-app/pull/8)
+- 7. [RuboCop](https://github.com/rubocop/rubocop) Code quality and format. First I added [rubocop-rails_config gem](https://github.com/toshimaru/rubocop-rails_config) by these two commits ([commit1](https://github.com/zakariaf/rails-base-app/commit/abfdce196721e517b9391b618093506fe062c499)) ([commit2](https://github.com/zakariaf/rails-base-app/commit/89e675b793a0467b271e91c85215a6539bcc4b57)), but after a while, I removed this gem and added rubocop gem and its extensions separately in this [PR](https://github.com/zakariaf/rails-base-app/pull/8)
 
-20. [Brakeman](https://github.com/presidentbeef/brakeman) Checking Ruby on Rails applications for security vulnerabilities. you can check `config/brakeman.ignore` to see ignore errors ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
-21. [bundler-audit](https://github.com/rubysec/bundler-audit) Patch-level verification for bundler ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
-22. [Fasterer](https://github.com/DamirSvrtan/fasterer) Make Rubies code faster by suggestion some speed improvements. check `.fasterer.yml` to enable/disable suggestions ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
-23. [License Finder](https://github.com/pivotal/LicenseFinder) Check the licenses of the gems and packages. you can update `doc/dependency_decisions.yml` to manage licenses ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
+- 20. [Brakeman](https://github.com/presidentbeef/brakeman) Checking Ruby on Rails applications for security vulnerabilities. you can check `config/brakeman.ignore` to see ignore errors ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
+- 21. [bundler-audit](https://github.com/rubysec/bundler-audit) Patch-level verification for bundler ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
+- 22. [Fasterer](https://github.com/DamirSvrtan/fasterer) Make Rubies code faster by suggestion some speed improvements. check `.fasterer.yml` to enable/disable suggestions ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
+- 23. [License Finder](https://github.com/pivotal/LicenseFinder) Check the licenses of the gems and packages. you can update `doc/dependency_decisions.yml` to manage licenses ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
 
 #### Common
 
-24. [overcommit](https://github.com/sds/overcommit) to manage and configure Git hooks by managing all healthy app tools. you can check `.overcommit.yml` to enable or disable tools. ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
-25. Enabling github action to run `overcommit` after push and pull requests in github. Check `.github/workflows/lint.yml` to see the github configs ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
+- 24. [overcommit](https://github.com/sds/overcommit) to manage and configure Git hooks by managing all healthy app tools. you can check `.overcommit.yml` to enable or disable tools. ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
+- 25. Enabling github action to run `overcommit` after push and pull requests in github. Check `.github/workflows/lint.yml` to see the github configs ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
 
 ## Auth
 
-26. [Devise](https://github.com/heartcombo/devise) and [Devise::JWT](https://github.com/waiting-for-dev/devise-jwt) JWT authentication solution [Backend PR1](https://github.com/zakariaf/rails-base-app/pull/6), [Backend PR2](https://github.com/zakariaf/rails-base-app/pull/12)
+- 26. [Devise](https://github.com/heartcombo/devise) and [Devise::JWT](https://github.com/waiting-for-dev/devise-jwt) JWT authentication solution [Backend PR1](https://github.com/zakariaf/rails-base-app/pull/6), [Backend PR2](https://github.com/zakariaf/rails-base-app/pull/12)
 
 We are using JWT to authentication using Devise and Devise::JWT gems. If you send a request to log in, the successful response will give you a header called `Authorization` which has the JWT token as value. and you need to add this header and its value to all of your requests.
 

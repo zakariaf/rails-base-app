@@ -5,15 +5,11 @@
   </ul>
 </template>
 
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {
-    logout() {
-      window.location.href = '/';
-    },
-  },
+<script setup lang="ts">
+import { useAuthStore } from '@/stores/auth.store';
+const authStore = useAuthStore();
+
+const logout = () => {
+  authStore.logout();
 };
 </script>

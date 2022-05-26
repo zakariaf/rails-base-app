@@ -70,4 +70,7 @@ Rails.application.configure do
 
   # Mailer configs
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # [Blocked host] clear the entire whitelist, which lets through requests for all hostnames.
+  config.hosts.clear
 end

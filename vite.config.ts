@@ -18,13 +18,13 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        sourceMap : false,
-        additionalData (source, fp) {
+        sourceMap: false,
+        additionalData(source: any, fp: any) {
           if (fp.endsWith('variables.scss')) return source;
 
-          return `@import "@/assets/css/_variables.scss"; ${source}`
-        }
+          return `@import "@/assets/css/_variables.scss"; ${source}`;
+        },
       },
     },
-  }
+  },
 });

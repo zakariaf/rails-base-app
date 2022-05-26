@@ -71,3 +71,10 @@
     - 6.4.1
     - 6.4.2
     :when: 2022-04-13 03:51:20.617234000 Z
+- - :approve
+  - big-integer
+  - :who: https://github.com/zakariaf/rails-base-app
+    :why: 'All licensing terms fulfilled; License: The Unlicense (https://github.com/peterolson/BigInteger.js/blob/v1.6.51/LICENSE)'
+    :versions:
+    - 1.6.51
+    :when: 2022-05-26 21:18:54.099203000 Z

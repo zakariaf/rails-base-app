@@ -1,5 +1,5 @@
 <template>
-  <div class="form">
+  <div v-if="!loggedIn" class="form">
     <div class="form-box pt-25">
       <div class="form-bg py-30 px-50">
         <span class="header pb-25">Sign in to your account</span>
@@ -30,26 +30,44 @@
       </div>
     </div>
   </div>
+  <div class="text-center">Redirecting to panel</div>
 </template>
 
-<script>
-export default {
-  name: 'LoginPage',
-  data() {
-    return {
-      user: {
-        email: '',
-        password: '',
-      },
-      showMessage: false,
-    };
-  },
-  methods: {
-    submit() {
-      this.showMessage = true;
-    },
-  },
+<script setup lang="ts">
+import { reactive, ref, onMounted, computed } from 'vue';
+import { useAuthStore } from '@/stores/auth.store';
+import { IUserLogin } from '@/types/general';
+import { showToast } from '@/utils/showToast';
+
+const authStore = useAuthStore();
+
+const user = reactive<IUserLogin>({
+  email: '',
+  password: '',
+});
+
+const redirectToPanel = () => {
+  window.location.href = '/panel/';
+};
+
+const showMessage = ref(false);
+
+const loggedIn = computed(() => authStore.isAuthenticated);
+
+onMounted(() => {
+  if (loggedIn.value) {
+    redirectToPanel();
+  }
+});
+
+const submit = () => {
+  authStore
+    .login(user)
+    .then(() => {
+      redirectToPanel();
+    })
+    .catch((error) => {
+      showToast(error, 'error');
+    });
 };
 </script>
-
-<style lang="scss" scoped></style>

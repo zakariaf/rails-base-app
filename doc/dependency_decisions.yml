@@ -55,6 +55,7 @@
     :why: 'All licensing terms fulfilled; License: GPL-3.0+ (https://github.com/rubysec/bundler-audit/blob/v0.9.0.1/COPYING.txt)'
     :versions:
     - 0.9.0.1
+    - 0.9.1
     :when: 2022-04-13 03:50:38.233482000 Z
 - - :approve
   - colorize

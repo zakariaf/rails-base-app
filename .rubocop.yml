@@ -15,7 +15,7 @@ AllCops:
     - "db/schema.rb"
 
 Metrics/BlockLength:
-  IgnoredMethods:
+  AllowedMethods:
     - context
     - describe
     - it

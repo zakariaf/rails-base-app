@@ -48,6 +48,7 @@
     :versions:
     - 5.2.2
     - 5.2.3
+    - 5.3.1
     :when: 2022-04-13 03:49:23.678617000 Z
 - - :approve
   - bundler-audit
@@ -71,6 +72,7 @@
     :versions:
     - 6.4.1
     - 6.4.2
+    - 6.5.6
     :when: 2022-04-13 03:51:20.617234000 Z
 - - :approve
   - big-integer

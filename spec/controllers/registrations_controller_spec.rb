@@ -25,7 +25,7 @@ describe RegistrationsController, type: :request do
 
   context 'when creating a new user' do
     it 'returns 200' do
-      expect(response.status).to eq(200)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'does not return token' do
@@ -46,7 +46,7 @@ describe RegistrationsController, type: :request do
     let(:email) { existing_user.email }
 
     it 'returns 400' do
-      expect(response.status).to eq(400)
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns the taken message' do
@@ -58,7 +58,7 @@ describe RegistrationsController, type: :request do
     let(:password_confirmation) { '123456Aa!' }
 
     it 'returns 400' do
-      expect(response.status).to eq(400)
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns the confirmation message' do

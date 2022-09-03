@@ -17,7 +17,7 @@ describe SessionsController, type: :request do
     end
 
     it 'returns 200' do
-      expect(response.status).to eq(200)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'creates an allowlisted_jwt record' do
@@ -36,7 +36,7 @@ describe SessionsController, type: :request do
     end
 
     it 'returns 401' do
-      expect(response.status).to eq(401)
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 
@@ -51,7 +51,7 @@ describe SessionsController, type: :request do
     end
 
     it 'returns 401' do
-      expect(response.status).to eq(401)
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 

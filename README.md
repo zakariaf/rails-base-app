@@ -38,7 +38,7 @@ You can see a list of gems that are in the project with a link to their commit. 
   - [jsonapi.rb](https://github.com/stas/jsonapi.rb) which provides some features for `jsonapi-serializer` [PR](https://github.com/zakariaf/rails-base-app/pull/9), [commit](https://github.com/zakariaf/rails-base-app/commit/b463d3a024513040c52b0745d042ee1fd9ea96aa) and [PR2](https://github.com/zakariaf/rails-base-app/pull/13)
   - [jsonapi-rspec](https://github.com/jsonapi-rb/jsonapi-rspec) which provides some beautiful RSpec matchers for JSON API [PR](https://github.com/zakariaf/rails-base-app/pull/10)
 - 13- [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
-- 14- [Redis](https://redis.io/) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba))
+- 14- [Redis](https://redis.io/) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba), [PR](https://github.com/zakariaf/rails-base-app/pull/20))
 - 15- [Sidekiq](https://github.com/mperham/sidekiq) ([commit](https://github.com/zakariaf/rails-base-app/commit/f7b759d9d42ce3444a04978fe2cbfc66cd120250))
 - 16- [dotenv](https://github.com/bkeepers/dotenv) ([commit](https://github.com/zakariaf/rails-base-app/commit/3aaa696c4228aac2dac40ff42591f07dc74a62bb))
 

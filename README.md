@@ -44,7 +44,7 @@ You can see a list of gems that are in the project with a link to their commit. 
 
 ### Front-end
 
-- 17- [Vite](https://github.com/ElMassimo/vite_ruby) Removing importmaps and all frontend libraries and Use Vite instead ([PR](https://github.com/zakariaf/rails-base-app/pull/1))
+- 17- [Vite](https://github.com/ElMassimo/vite_ruby) Removing importmaps and all frontend libraries and Use Vite instead ([PR](https://github.com/zakariaf/rails-base-app/pull/1)), and remove Sprockets and unused assets files ([PR](https://github.com/zakariaf/rails-base-app/pull/21))
 - 18- Code quality and format (Check **Healthy app/Frontend** part)
 - 19- [Vue.js](https://vuejs.org/) Vue.js version 3 ([PR](https://github.com/zakariaf/rails-base-app/pull/4) , [PR-fixbug](https://github.com/zakariaf/rails-base-app/pull/11))
 - 27- Enabling auth process(and make the app ready) which needed more packages [PR](https://github.com/zakariaf/rails-base-app/pull/15):

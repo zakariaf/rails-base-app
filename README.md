@@ -73,6 +73,7 @@ You can see a list of gems that are in the project with a link to their commit. 
 - 21- [bundler-audit](https://github.com/rubysec/bundler-audit) Patch-level verification for bundler ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
 - 22- [Fasterer](https://github.com/DamirSvrtan/fasterer) Make Rubies code faster by suggestion some speed improvements. check `.fasterer.yml` to enable/disable suggestions ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
 - 23- [License Finder](https://github.com/pivotal/LicenseFinder) Check the licenses of the gems and packages. you can update `doc/dependency_decisions.yml` to manage licenses ([PR](https://github.com/zakariaf/rails-base-app/pull/7))
+- Moving linting gems into development and test group in Gemfile ([commit](https://github.com/zakariaf/rails-base-app/commit/5671c93ac791b4ad7ea8dcc191d0f36730887f50))
 
 #### Common
 

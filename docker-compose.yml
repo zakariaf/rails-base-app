@@ -52,6 +52,8 @@ services:
     depends_on:
       - "postgres"
       - "redis"
+    environment:
+      VITE_RUBY_HOST: vite
     deploy:
       resources:
         limits:
@@ -102,7 +104,9 @@ services:
       - "3036:3036"
       - "3037:3037"
     volumes:
-      - ".:/app"
+      - .:/app
+    environment:
+      VITE_RUBY_HOST: 0.0.0.0
 
 volumes:
   postgres: {}

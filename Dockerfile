@@ -27,7 +27,6 @@ ARG NODE_ENV
 ENV RAILS_ENV="${RAILS_ENV}" \
     NODE_ENV="${NODE_ENV}"
 
-RUN echo ${RAILS_ENV}
 RUN if [ "${RAILS_ENV}" != "development" ]; then \
     bundle config set without "development test"; fi
 RUN bundle install --jobs "$(nproc)" --retry "$(nproc)"

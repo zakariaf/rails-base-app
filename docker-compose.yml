@@ -28,11 +28,11 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
       # POSTGRES_DB: "${POSTGRES_DB}"
     image: "postgres:15.0-alpine"
-    profiles: ["postgres"]
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     stop_grace_period: "3s"
     volumes:
       - "postgres:/var/lib/postgresql/data"
+    profiles: ["postgres"]
 
   redis:
     deploy:
@@ -41,11 +41,11 @@ services:
           cpus: "${DOCKER_REDIS_CPUS:-0}"
           memory: "${DOCKER_REDIS_MEMORY:-0}"
     image: "redis:7.0.5-alpine"
-    profiles: ["redis"]
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     stop_grace_period: "3s"
     volumes:
       - "redis:/data"
+    profiles: ["redis"]
 
   web:
     <<: *default-app
@@ -95,7 +95,6 @@ services:
 
   vite:
     <<: *default-app
-    profiles: ["assets"]
     restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     stop_grace_period: "3s"
     tty: true
@@ -107,6 +106,7 @@ services:
       - .:/app
     environment:
       VITE_RUBY_HOST: 0.0.0.0
+    profiles: ["assets"]
 
 volumes:
   postgres: {}

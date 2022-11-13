@@ -13,6 +13,8 @@ RUN apk add --update \
   nodejs=$NODE_VERSION \
   yarn=$YARN_VERSION
 
+######################################################################
+
 # This stage will be responsible for installing gems and npm packages
 FROM base AS dependencies
 
@@ -36,7 +38,7 @@ COPY package.json yarn.lock ./
 # Install npm packages
 RUN yarn install --frozen-lockfile
 
-###############################################################################
+######################################################################
 
 # We're back at the base stage
 FROM base AS app

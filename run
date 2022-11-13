@@ -1,0 +1,151 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+DC="${DC:-exec}"
+
+# If we're running in CI we need to disable TTY allocation for docker compose
+# commands that enable it by default, such as exec and run.
+TTY=""
+if [[ ! -t 1 ]]; then
+  TTY="-T"
+fi
+
+# -----------------------------------------------------------------------------
+# Helper functions start with _ and aren't listed in this script's help menu.
+# -----------------------------------------------------------------------------
+
+function _dc {
+  docker compose "${DC}" ${TTY} "${@}"
+}
+
+function _build_run_down {
+  docker compose build
+  docker compose run ${TTY} "${@}"
+  docker compose down
+}
+
+# -----------------------------------------------------------------------------
+
+function cmd {
+  # Run any command you want in the web container
+  _dc web "${@}"
+}
+
+function rails {
+  # We need to create the test packs before we run our tests.
+  if [ "${1-''}" == "test" ]; then
+    _dc -e "RAILS_ENV=test" vite rails assets:precompile
+  fi
+
+  # Run tests
+  cmd rails "${@}"
+}
+
+function shell {
+  # Start a shell session in the web container
+  cmd bash "${@}"
+}
+
+function psql {
+  ## Connect to PostgreSQL with psql
+  # shellcheck disable=SC1091
+  . .env
+ _dc postgres psql -U "${POSTGRES_USER}" "${@}"
+}
+
+function redis-cli {
+  ## Connect to Redis with redis-cli
+  _dc redis redis-cli "${@}"
+}
+
+function hadolint {
+  # Lint Dockerfile with hadolint
+  docker container run --rm -i \
+    hadolint/hadolint hadolint --ignore DL3008 -t style "${@}" - < Dockerfile
+}
+
+function bundle:install {
+  ## Install Ruby dependencies and write out a lock file
+  _build_run_down web bundle install
+}
+
+function bundle:outdated {
+  ## List any installed gems that are outdated
+  cmd bundle outdated
+}
+
+function bundle:update {
+  ## Update any installed gems that are outdated
+  cmd bundle update
+  bundle:install
+}
+
+function yarn:install {
+  ## Install Yarn dependencies and write out a lock file
+  _build_run_down vite yarn install
+}
+
+function yarn:outdated {
+  ## Install yarn dependencies and write lock file
+  _dc vite yarn outdated
+}
+
+function clean {
+  ## Remove cache and other machine generates files
+  rm -rf node_modules/ public/assets public/vite* tmp/* .byebug_history
+}
+
+function ci:install-deps {
+  # Install Continuous Integration (CI) dependencies
+  sudo apt-get install -y curl shellcheck
+  sudo curl \
+    -L https://raw.githubusercontent.com/nickjj/wait-until/v0.1.2/wait-until \
+    -o /usr/local/bin/wait-until && sudo chmod +x /usr/local/bin/wait-until
+}
+
+function ci:test {
+  # Execute Continuous Integration (CI) pipeline
+  #
+  # It's expected that your CI environment has these tools available:
+  #   - https://github.com/koalaman/shellcheck
+  #   - https://github.com/nickjj/wait-until
+  shellcheck run bin/docker-entrypoint-web
+  hadolint "${@}"
+
+  cp --no-clobber .env.example .env
+
+  docker compose build
+  docker compose up -d
+
+  # shellcheck disable=SC1091
+  . .env
+  wait-until "docker compose exec -T \
+    -e PGPASSWORD=${POSTGRES_PASSWORD} postgres \
+    psql -U ${POSTGRES_USER} ${POSTGRES_USER} -c 'SELECT 1'"
+
+  docker compose logs
+
+  rails db:setup
+
+  # Since we're running tests in CI without volumes and Rails needs the packs
+  # to exist when running tests, we need to run our tests from the webpacker
+  # container instead of the web container since the web container won't have
+  # the packs in it.
+  _dc -e "RAILS_ENV=test" vite rails assets:precompile
+  _dc vite rails test
+}
+
+function help {
+  printf "%s <task> [args]\n\nTasks:\n" "${0}"
+
+  compgen -A function | grep -v "^_" | cat -n
+
+  printf "\nExtended help:\n  Each task has comments for general usage\n"
+}
+
+# This idea is heavily inspired by: https://github.com/adriancooney/Taskfile
+TIMEFORMAT=$'\nTask completed in %3lR'
+time "${@:-help}"

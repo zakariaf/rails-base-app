@@ -12,7 +12,6 @@ x-app: &default-app
     - ".env"
   restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
   stop_grace_period: "3s"
-  tty: true
 
 services:
   postgres:

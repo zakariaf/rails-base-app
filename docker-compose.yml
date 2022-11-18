@@ -3,8 +3,8 @@ x-app: &default-app
     context: "."
     target: "app"
     args:
-      - "RAILS_ENV=${RAILS_ENV:-production}"
-      - "NODE_ENV=${NODE_ENV:-production}"
+      - "RAILS_ENV=production"
+      - "NODE_ENV=production"
       - "RUBY_VERSION=3.1.2"
       - "NODE_VERSION=16.17.1-r0"
       - "YARN_VERSION=1.22.19-r0"
@@ -13,8 +13,6 @@ x-app: &default-app
   restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
   stop_grace_period: "3s"
   tty: true
-  volumes:
-    - "${DOCKER_WEB_VOLUME:-./public:/app/public}"
 
 services:
   postgres:
@@ -52,8 +50,6 @@ services:
     depends_on:
       - "postgres"
       - "redis"
-    environment:
-      VITE_RUBY_HOST: vite
     deploy:
       resources:
         limits:
@@ -93,21 +89,6 @@ services:
     ports:
       - "${DOCKER_CABLE_PORT_FORWARD:-127.0.0.1:28080}:28080"
     profiles: ["cable"]
-
-  vite:
-    <<: *default-app
-    restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
-    stop_grace_period: "3s"
-    tty: true
-    command: "yarn dev"
-    ports:
-      - "3036:3036"
-      - "3037:3037"
-    volumes:
-      - .:/app
-    environment:
-      VITE_RUBY_HOST: 0.0.0.0
-    profiles: ["assets"]
 
 volumes:
   postgres: {}

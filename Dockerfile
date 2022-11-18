@@ -20,6 +20,8 @@ FROM base AS dependencies
 
 # Install system dependencies required to build some Ruby gems (pg)
 RUN apk add --update build-base
+RUN mkdir /app
+WORKDIR /app
 
 COPY .ruby-version Gemfile Gemfile.lock ./
 
@@ -29,14 +31,17 @@ ARG NODE_ENV
 ENV RAILS_ENV="${RAILS_ENV}" \
     NODE_ENV="${NODE_ENV}"
 
-RUN if [ "${RAILS_ENV}" != "development" ]; then \
-    bundle config set without "development test"; fi
+RUN bundle config set without "development test"
 RUN bundle install --jobs "$(nproc)" --retry "$(nproc)"
 
 COPY package.json yarn.lock ./
 
 # Install npm packages
 RUN yarn install --frozen-lockfile
+
+COPY . ./
+
+RUN SECRET_KEY_BASE=irrelevant DEVISE_JWT_SECRET_KEY=irrelevant bundle exec rails assets:precompile
 
 ######################################################################
 
@@ -54,26 +59,12 @@ WORKDIR /app
 
 # Copy over gems from the dependencies stage
 COPY --from=dependencies /usr/local/bundle/ /usr/local/bundle/
-
-# Copy over npm packages from the dependencies stage
-# Note that we have to use `--chown` here
-COPY --chown=app --from=dependencies /node_modules/ node_modules/
+COPY --chown=app --from=dependencies /app/public/ /app/public/
 
 # Finally, copy over the code
 # This is where the .dockerignore file comes into play
 # Note that we have to use `--chown` here
 COPY --chown=app . ./
 
-# Install assets
-ARG RAILS_ENV="production"
-ARG NODE_ENV="production"
-ENV RAILS_ENV="${RAILS_ENV}" \
-    NODE_ENV="${NODE_ENV}"
-
-RUN if [ "${RAILS_ENV}" != "development" ]; then \
-  SECRET_KEY_BASE=irrelevant DEVISE_JWT_SECRET_KEY=irrelevant bundle exec rails assets:precompile; fi
-
 # Launch the server
-EXPOSE 3000
-
 CMD ["rails", "s"]

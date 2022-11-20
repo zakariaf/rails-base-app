@@ -1,21 +1,46 @@
 .git/
-log/*
-!log/.keep
-node_modules
-public/vite/*
-public/vite-test/*
-storage/*
-!storage/.keep
-tmp/*
-!tmp/.keep
 
-.bundle
-.byebug_history
-.dockerignore
-.env*
-!.env.example
-!.env.test
-config/master.key
-yarn-error.log
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+npm-debug.log*
 yarn-debug.log*
-.yarn-integrity
+yarn-error.log*
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+
+/public/assets
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+# Ignore SampleCov files
+/coverage/*
+
+# Vite Ruby
+/public/vite*
+node_modules
+# Vite uses dotenv and suggests to ignore local-only env files. See
+# https://vitejs.dev/guide/env-and-mode.html#env-files
+*.local
+
+# Ignore uncategorized files
+.DS_Store

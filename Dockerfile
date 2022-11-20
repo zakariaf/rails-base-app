@@ -27,9 +27,8 @@ COPY .ruby-version Gemfile Gemfile.lock ./
 
 # Install gems
 ARG RAILS_ENV
-ARG NODE_ENV
 ENV RAILS_ENV="${RAILS_ENV}" \
-    NODE_ENV="${NODE_ENV}"
+    NODE_ENV="development"
 
 RUN bundle config set without "development test"
 RUN bundle install --jobs "$(nproc)" --retry "$(nproc)"

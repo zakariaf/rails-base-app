@@ -2,17 +2,39 @@
   <a href="https://rubyonrails.org/"><img width="300" src="https://zakaria.dev/assets/images/rails_base_app/Ruby_On_Rails_Logo.png" alt="Ruby On Rails"></a>
   <a href="https://vite-ruby.netlify.app/" style="margin-left: 20px"><img width="110" src="https://zakaria.dev/assets/images/rails_base_app/vite_ruby.svg" alt="Vite Ruby"></a>
   <a href="https://vuejs.org/" style="margin-left: 20px"><img width="90" src="https://zakaria.dev/assets/images/rails_base_app/vuejs-logo.png" alt="Vue.js"></a>
+  <a href="https://www.docker.com" style="margin-left: 20px"><img width="105" src="https://zakaria.dev/assets/images/rails_base_app/docker-logo.png" alt="Docker"></a>
 </p>
 
 # An example Rails 7 app
 
 [![](https://badgen.net/badge/Rails/7.0.4/red)](https://github.com/zakariaf/rails-base-app/blob/main/Gemfile.lock) [![](https://badgen.net/badge/Ruby/3.1.2/red)](https://github.com/zakariaf/rails-base-app/blob/main/.ruby-version) [![](https://img.shields.io/badge/dynamic/json?color=red&label=Vite&query=%24.devDependencies.vite&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Vue&query=%24.dependencies.vue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![](https://img.shields.io/badge/dynamic/json?color=blue&label=TypeScript&query=%24.devDependencies.typescript&url=https%3A%2F%2Fraw.githubusercontent.com%2Fzakariaf%2Frails-base-app%2Fmain%2Fpackage.json)](https://github.com/zakariaf/rails-base-app/blob/main/package.json) [![GitHub license](https://img.shields.io/github/license/zakariaf/rails-base-app)](https://github.com/zakariaf/rails-base-app/blob/main/LICENSE)
 
-**This app is built with Rails 7, Ruby 3, Vite, Vue 3 and typescript.** You could use this example app as a base for your upcoming projects. Or, you could use it as a tutorial that tells you which steps you need to take to create a project from scratch.
+**This app is built with Rails 7, Ruby 3, Vite, Vue 3 and typescript. and is using Docker for building production images** You could use this example app as a base for your upcoming projects. Or, you could use it as a tutorial that tells you which steps you need to take to create a project from scratch.
 
 Several gems and packages are included in this example app that I've been using for a long time. It wires up a number of things you might use in a real world Rails app. However, at the same time it's not loaded up with a million personal opinions.
 
 - As [Webpacker](https://github.com/rails/webpacker#webpacker-has-been-retired-) has been retired, we are using [Vite](https://vite-ruby.netlify.app/) instead. It wouldn't be fair if I didn't say that: **Vite** is fantastic.
+
+<!-- List of all topics -->
+
+## Table of Contents
+
+- [Tech stack](#tech-stack)
+  - [Back-end](#back-end)
+  - [Front-end](#front-end)
+  - [Healthy app](#healthy-app)
+  - [Auth](#auth)
+  - [Apps](#apps)
+- [Running app](#running-app)
+  - [Clone the repo](#clone-the-repo)
+  - [Install dependencies](#install-dependencies)
+  - [Copy .env to .env.local](#copy-env-to-envlocal)
+  - [Setup database](#setup-database)
+  - [Run the app](#run-the-app)
+- [Renaming the project](#renaming-the-project)
+- [Docker](#docker)
+- [How to contribute](#how-to-contribute)
+- [License](#license)
 
 ## Tech stack
 
@@ -154,51 +176,69 @@ Two simple html/css templates have been added for **Website** and **Panel**. you
 
 ![Website and Panel preview](https://zakaria.dev/repos_images/website.png)
 
-## Running this app
+## Running app
 
-You need to do few small steps to run the app
+I generally recommend to use Docker only for building production images, and not for development. hence I didn't add any docker configs for development.
 
-### Clone the repo
+To run the app locally, you need to have [Ruby](https://www.ruby-lang.org/en/) and [PostgreSQL](https://www.postgresql.org/) installed on your machine.
 
-```sh
+### 1. Clone the repo
+
+```bash
 git clone https://github.com/zakariaf/rails-base-app baseapp
 cd baseapp
 ```
 
-### Copy example file
+### 2. Install dependencies
 
-```sh
-cp .env.example .env.local
+```bash
+bundle install # install ruby gems
+yarn install # install node packages
 ```
 
-Environment variables defined here(`.env`), feel free to change or add variables as needed.
-This file is ignored from git (Check `.gitignore`) so it will never be commit.
+### 3. Copy .env to .env.local
 
-If you use different values for environment variables in other envs, e.g. **test**, you need to copy one more: `.env.test.local`
+`.env` file is used for production and `.env.local` will be used for development
 
-**Note** `.env.test` is used by github workflows.
+Usually, you need to change the Postgres variables in `.env.local` file to match your local database.
 
-### Setup the project
-
-create databases
-
-```sh
-rails db:setup
+```bash
+cp .env .env.local
 ```
 
-### start the project
+### 4. Setup database
 
-- rails server
+```bash
+bundle rails db:setup
+```
 
-  ```sh
-  rails s
-  ```
+### 5. Run the app
 
-- frontend app
+- Run the server
 
-  ```sh
-  yarn dev
-  ```
+```bash
+bundle rails s
+```
+
+- Run the frontend
+
+```bash
+yarn dev
+```
+
+## Docker
+
+As I mentioned before, We use Docker only for building production images. We are using [Docker Compose](https://docs.docker.com/compose/) to build the images and run the containers. You can check the `docker-compose.yml` file to see the configurations. and you can check the `Dockerfile` file to see the configurations for the production image.
+
+Dockerize was done by this MR [Dockerize the app](https://github.com/zakariaf/rails-base-app/pull/23)
+
+**NOTE** Documentation about docker is not complete yet, I will update it soon.
+
+### 1. Build the images
+
+```bash
+docker compose build
+```
 
 ## Renaming the project
 
@@ -225,9 +265,22 @@ name later on.
 
 I got the rename script idea and codes from [Docker Rails Example](https://github.com/nickjj/docker-rails-example#running-a-script-to-automate-renaming-the-project) project with some small changes.
 
+## How to contribute
+
+I'm happy to accept any contributions you might want to make. Please follow these steps:
+
+1. Fork the repo
+2. Create a new branch
+3. Make your changes
+4. Run the test suite
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
 ## TODO
 
-- [ ] Add cypress
-- [ ] Dockerize
-- [ ] automatic deploy process using capistrano
-- [ ] add .gitlab-ci
+- [ ] automat deploy process using capistrano
+- [ ] Add cypress (e2e testing)
+- [ ] add .gitlab-ci (gitlab users)

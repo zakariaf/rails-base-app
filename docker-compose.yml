@@ -1,0 +1,93 @@
+x-app: &default-app
+  build:
+    context: "."
+    target: "app"
+    args:
+      - "RAILS_ENV=production"
+      - "RUBY_VERSION=3.1.2"
+      - "NODE_VERSION=16.17.1-r0"
+      - "YARN_VERSION=1.22.19-r0"
+  env_file:
+    - ".env"
+  restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+  stop_grace_period: "3s"
+
+services:
+  postgres:
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_POSTGRES_CPUS:-0}"
+          memory: "${DOCKER_POSTGRES_MEMORY:-0}"
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      # POSTGRES_DB: "${POSTGRES_DB}"
+    image: "postgres:15.0-alpine"
+    restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+    stop_grace_period: "3s"
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
+    profiles: ["postgres"]
+
+  redis:
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_REDIS_CPUS:-0}"
+          memory: "${DOCKER_REDIS_MEMORY:-0}"
+    image: "redis:7.0.5-alpine"
+    restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
+    stop_grace_period: "3s"
+    volumes:
+      - "redis:/data"
+    profiles: ["redis"]
+
+  web:
+    <<: *default-app
+    depends_on:
+      - "postgres"
+      - "redis"
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_WEB_CPUS:-0}"
+          memory: "${DOCKER_WEB_MEMORY:-0}"
+    ports:
+      - "${DOCKER_WEB_PORT_FORWARD:-127.0.0.1:3000}:${PORT:-3000}"
+    profiles: ["web"]
+    tty: true
+
+  worker:
+    <<: *default-app
+    depends_on:
+      - "postgres"
+      - "redis"
+    command: "bundle exec sidekiq -C config/sidekiq.yml"
+    entrypoint: []
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_WORKER_CPUS:-0}"
+          memory: "${DOCKER_WORKER_MEMORY:-0}"
+    profiles: ["worker"]
+
+  cable:
+    <<: *default-app
+    depends_on:
+      - "postgres"
+      - "redis"
+    command: "puma -p 28080 cable/config.ru"
+    entrypoint: []
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_CABLE_CPUS:-0}"
+          memory: "${DOCKER_CABLE_MEMORY:-0}"
+    ports:
+      - "${DOCKER_CABLE_PORT_FORWARD:-127.0.0.1:28080}:28080"
+    profiles: ["cable"]
+
+volumes:
+  postgres: {}
+  redis: {}

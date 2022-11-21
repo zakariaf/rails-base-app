@@ -22,8 +22,9 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          tags: baseapp:latest
           build-args: |
-            RAILS_ENV="production"
-            RUBY_VERSION="3.1.2"
-            NODE_VERSION="16.17.1-r0"
-            YARN_VERSION="1.22.19-r0"
+            RAILS_ENV=production
+            RUBY_VERSION=3.1.2
+            NODE_VERSION=16.17.1-r0
+            YARN_VERSION=1.22.19-r0

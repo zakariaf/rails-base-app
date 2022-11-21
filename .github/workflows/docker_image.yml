@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # This job is used to build the Docker image and uses the Dockerfile and .env file
+  # from the root of the project.
+  build-and-publish-latest:
+    runs-on: ubuntu-latest
+    # if: github.ref == 'refs/heads/master' # Running this job only for master branch
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3 # Checking out the repo
+
+      - name: Build and Publish latest Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: my-app:latest

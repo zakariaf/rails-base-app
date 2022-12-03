@@ -21,27 +21,15 @@ fi
 
 cat << EOF
 When renaming your project you'll need to re-create a new database.
+This can easily be done by running `rails db:setup`.
 
-This can easily be done with Docker, but before this script does it
-please agree that it's ok for this script to delete your current
+If you are using the project with no Docker, previous databases will be remain and
+you can use their names in the env variables.
+
+I didn't dockerize the repo yet, but after dockerization, script deletes your current
 project's database(s) by removing any associated Docker volumes.
 
 EOF
-
-while true; do
-    read -p "Run docker compose down -v (y/n)? " -r yn
-    case "${yn}" in
-        [Yy]* )
-          printf "\n--------------------------------------------------------\n"
-          docker compose down -v
-          printf -- "--------------------------------------------------------\n"
-
-          break;;
-        [Nn]* ) exit;;
-        * ) echo "";;
-    esac
-done
-
 # -----------------------------------------------------------------------------
 # The core of the script which renames a few things.
 # -----------------------------------------------------------------------------
@@ -63,7 +51,6 @@ function init_git_repo {
   [ -d .git/ ] && rm -rf .git/
 
 cat << EOF
-
 --------------------------------------------------------
 $(git init)
 --------------------------------------------------------

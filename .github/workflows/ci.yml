@@ -46,8 +46,6 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_HOST: localhost
-          POSTGRES_PORT: 5432
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: baseapp_test
@@ -86,8 +84,11 @@ jobs:
           yarn install
 
       - name: Create DB
-        run: |
-          bundle exec rails db:reset
+        env:
+          POSTGRES_HOST: localhost
+        run: bundle exec rails db:reset
 
       - name: Run tests
+        env:
+          POSTGRES_HOST: localhost
         run: bundle exec rspec

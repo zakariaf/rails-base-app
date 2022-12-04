@@ -41,12 +41,18 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
+      DEVISE_JWT_SECRET_KEY: irrelevant
+      POSTGRES_HOST: localhost
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: baseapp
     services:
       postgres:
         image: postgres:latest
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: baseapp_test
         ports:
           - 5432:5432
         options:
@@ -67,7 +73,7 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.2 # Not needed with a .ruby-version file
+          ruby-version: 3.1.2 # Not needed .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Install Node.js
@@ -82,8 +88,7 @@ jobs:
           yarn install
 
       - name: Create DB
-        run: |
-          bundle exec rails db:reset
+        run: bundle exec rails db:reset
 
       - name: Run tests
         run: bundle exec rspec

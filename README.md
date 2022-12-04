@@ -198,12 +198,15 @@ yarn install # install node packages
 
 ### 3. Copy .env to .env.local
 
-`.env` file is used for production and `.env.local` will be used for development
+- `.env` file is used for production
+- `.env.local` will be used for development
+- `.env.test` will be used for test
 
-Usually, you need to change the Postgres variables in `.env.local` file to match your local database.
+Usually, you only need to change the Postgres variables in `.env.local` file to match your local database.
 
 ```bash
 cp .env .env.local
+cp .env .env.test
 ```
 
 ### 4. Setup database

@@ -42,6 +42,10 @@ jobs:
     env:
       RAILS_ENV: test
       DEVISE_JWT_SECRET_KEY: irrelevant
+      POSTGRES_HOST: localhost
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: baseapp
     services:
       postgres:
         image: postgres:latest
@@ -84,11 +88,7 @@ jobs:
           yarn install
 
       - name: Create DB
-        env:
-          POSTGRES_HOST: localhost
         run: bundle exec rails db:reset
 
       - name: Run tests
-        env:
-          POSTGRES_HOST: localhost
         run: bundle exec rspec

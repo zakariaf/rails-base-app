@@ -1,4 +1,4 @@
-import { AxiosResponse } from 'axios';
+import type { AxiosResponse } from 'axios';
 import { http } from '@/services/http.service';
 import { IRegisterUser, IUserLogin } from '@/types/general';
 

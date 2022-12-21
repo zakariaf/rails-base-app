@@ -1,5 +1,30 @@
 # CHANGELOG
 
+## 21 December 2022
+
+- Upgrade Front-End packages
+
+  - @babel/types 7.20.2 -> 7.20.5
+  - axio 0.27.2 -> 1.2.1
+  - pinia 2.0.23 -> 2.0.28
+  - vue 3.2.41 -> 3.2.45
+  - @types/node 18.11.9 -> 18.11.17
+  - @typescript-eslint/eslint-plugin 5.42.0 -> 5.47.0
+  - @typescript-eslint/parser 5.42.0 -> 5.47.0
+  - @vitejs/plugin-vue 3.2.0 -> 4.0.0
+  - eslint 8.26.0 -> 8.30.0
+  - eslint-plugin-vue 9.7.0 -> 9.8.0
+  - husky 8.0.1 -> 8.0.2
+  - lint-staged 13.0.3 -> 13.1.0
+  - prettier 2.7.1 -> 2.8.1
+  - sass 1.56.0 -> 1.57.1
+  - typescript 4.8.4 -> 4.9.4
+  - vite 3.2.0 -> 4.0.3
+  - vite-plugin-ruby 3.1.2 -> 3.1.3
+  - vue-tsc 1.0.9 -> 1.0.16
+
+- Fix axios breaking changes
+
 ## 17 December 2022
 
 - Upgrade **Ruby** 3.1.2 -> 3.1.3

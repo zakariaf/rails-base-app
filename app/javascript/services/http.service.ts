@@ -1,4 +1,5 @@
-import axios, { AxiosRequestHeaders } from 'axios';
+import axios from 'axios';
+import type { HeadersDefaults } from 'axios';
 import { API_URL } from '@/configs';
 import AuthService from '@/services/auth.service';
 
@@ -22,7 +23,7 @@ http.interceptors.response.use(
   },
 );
 
-const setHTTPHeader = (header: AxiosRequestHeaders) => {
+const setHTTPHeader = (header: HeadersDefaults['common']) => {
   http.defaults.headers.common = { ...http.defaults.headers.common, ...header };
 };
 

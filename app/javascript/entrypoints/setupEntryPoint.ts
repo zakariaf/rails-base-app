@@ -18,7 +18,7 @@ export const setupEntryPoint = (rootComponent: Component, router: Router) => {
   app.use(router);
   app.use(pinia);
   app.use(VueQueryPlugin);
-  app.config.globalProperties = globalProperties;
+  app.config.globalProperties = { ...app.config.globalProperties, ...globalProperties };
 
   app.mount('#app');
 };

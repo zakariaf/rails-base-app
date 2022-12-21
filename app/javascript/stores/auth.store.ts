@@ -1,4 +1,4 @@
-import { AxiosResponse } from 'axios';
+import type { AxiosResponse } from 'axios';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 import AuthService from '@/services/auth.service';
 import { IRegisterUser, IUserLogin } from '@/types/general';

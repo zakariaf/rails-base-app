@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 08 February 2023
+
+- Upgrade **Ruby** 3.1.2 -> 3.1.3
+
 ## 21 December 2022
 
 - Upgrade Front-End packages
@@ -27,7 +31,6 @@
 
 ## 17 December 2022
 
-- Upgrade **Ruby** 3.1.2 -> 3.1.3
 - Upgrade gems:
 
   - bootsnap 1.13.0 -> 1.15.0

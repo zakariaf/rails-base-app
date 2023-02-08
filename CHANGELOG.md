@@ -54,6 +54,25 @@
   - unicode-display_width 2.3.0 -> 2.4.2
   - vite_ruby 3.2.13 -> 3.2.14
   - warden-jwt_auth 0.7.0 -> 0.8.0
+- Upgrade Front-End packages
+  - @babel/types 7.20.5 -> 7.20.7
+  - @types/node 18.11.17 -> 18.13.0
+  - @typescript-eslint/eslint-plugin 5.47.0 -> 5.51.0
+  - @typescript-eslint/parser 5.47.0 -> 5.51.0
+  - axios 1.2.1 -> 1.3.2
+  - eslint 8.30.0 -> 8.33.0
+  - eslint-config-prettier 8.5.0 -> 8.6.0
+  - eslint-plugin-import 2.26.0 -> 2.27.5
+  - eslint-plugin-vue 9.8.0 -> 9.9.0
+  - husky 8.0.2 -> 8.0.3
+  - lint-staged 13.1.0 -> 13.1.1
+  - pinia 2.0.28 -> 2.0.30
+  - prettier 2.8.1 -> 2.8.4
+  - sass 1.57.1 -> 1.58.0
+  - typescript 4.9.4 -> 4.9.5
+  - vite 4.0.3 -> 4.1.1
+  - vue 3.2.45 -> 3.2.47
+  - vue-tsc 1.0.16 -> 1.0.24
 
 ## 21 December 2022
 

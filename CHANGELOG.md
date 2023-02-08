@@ -73,6 +73,7 @@
   - vite 4.0.3 -> 4.1.1
   - vue 3.2.45 -> 3.2.47
   - vue-tsc 1.0.16 -> 1.0.24
+- Upgrade json5 package to fix vulnerability: Prototype Pollution in JSON5 via Parse Method
 - Add nickjj name into the LICENSE file
 
 ## 21 December 2022

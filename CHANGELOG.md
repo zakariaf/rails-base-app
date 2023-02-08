@@ -3,6 +3,57 @@
 ## 08 February 2023
 
 - Upgrade **Ruby** 3.1.2 -> 3.1.3
+- Upgrade **Rails** 7.0.4 -> 7.0.4.2
+- Upgrade gems
+  - bootsnap 1.15.0 -> 1.16.0
+  - concurrent-ruby 1.1.10 -> 1.2.0
+  - date 3.3.2 -> 3.3.3
+  - debug 1.7.0 -> 1.7.1
+  - dry-auto_inject 0.9.0 -> 1.0.0
+  - dry-cli 0.7.0 -> 1.0.0
+  - dry-configurable 0.16.1 -> 1.0.1
+  - dry-core 0.9.1 -> 1.0.0
+  - erubi 1.11.0 -> 1.12.0
+  - faker 3.0.0 -> 3.1.1
+  - globalid 1.0.0 -> 1.1.0
+  - has_scope 0.8.0 -> 0.8.1
+  - irb 1.6.1 -> 1.6.2
+  - jwt 2.5.0 -> 2.7.0
+  - mail 2.8.0 -> 2.8.1
+  - mini_portile2 2.8.0 -> 2.8.1
+  - minitest 5.16.3 -> 5.17.0
+  - net-imap 0.3.2 -> 0.3.4
+  - nokogiri 1.13.10 -> 1.14.1
+  - overcommit 0.59.1 -> 0.60.0
+  - pagy 5.10.1 -> 6.0.1
+  - parser 3.1.3.0 -> 3.2.0.0
+  - pry 0.14.1 -> 0.14.2
+  - puma 6.0.0 -> 6.0.2
+  - racc 1.6.1 -> 1.6.2
+  - rack 2.2.4 -> 2.2.6.2
+  - rack-proxy 0.7.4 -> 0.7.6
+  - rails-html-sanitizer 1.4.4 -> 1.5.0
+  - railties 7.0.4 -> 7.0.4.2
+  - redis 5.0.5 -> 5.0.6
+  - redis-client 0.11.2 -> 0.12.1
+  - regexp_parser 2.6.1 -> 2.6.2
+  - responders 3.0.1 -> 3.1.0
+  - rspec-core 3.12.0 -> 3.12.1
+  - rspec-expectations 3.12.1 -> 3.12.2
+  - rspec-mocks 3.12.1 -> 3.12.3
+  - rubocop 1.40.0 -> 1.44.1
+  - rubocop-ast 1.24.0 -> 1.24.1
+  - rubocop-performance 1.15.1 -> 1.16.0
+  - rubocop-rails 2.17.3 -> 2.17.4
+  - rubocop-rspec 2.16.0 -> 2.18.1
+  - rubocop-capybara 2.17.0
+  - selenium-webdriver 4.7.1 -> 4.8.0
+  - sidekiq 7.0.2 -> 7.0.3
+  - simplecov 0.21.2 -> 0.22.0
+  - tzinfo 2.0.5 -> 2.0.6
+  - unicode-display_width 2.3.0 -> 2.4.2
+  - vite_ruby 3.2.13 -> 3.2.14
+  - warden-jwt_auth 0.7.0 -> 0.8.0
 
 ## 21 December 2022
 

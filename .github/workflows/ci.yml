@@ -15,7 +15,7 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.2 # Not needed with a .ruby-version file
+          ruby-version: 3.1.3 # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Install Node.js
@@ -73,7 +73,7 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.2 # Not needed .ruby-version file
+          ruby-version: 3.1.3 # Not needed .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Install Node.js

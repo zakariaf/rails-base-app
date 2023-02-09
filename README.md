@@ -251,7 +251,7 @@ The only thing you need to do is just running the `bin/rename-project yourappnam
 as you see this script needs 2 arguments:
 
 - First argument: The lower case version of your app's name, such as `myapp` or `my_app` depending on your preference.
-- First argument: Used for your app's module name. such as `MyApp`
+- Second argument: Used for your app's module name. such as `MyApp`
 
 `bin/rename-project myapp MyApp`
 

@@ -15,7 +15,6 @@
   - io-console
   - irb
   - reline
-  - mini_portile2
 - Upgrade Front-End packages
   - eslint 8.33.0 -> 8.34.0
 

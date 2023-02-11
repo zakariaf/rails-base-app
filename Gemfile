@@ -68,7 +68,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
   gem 'pry'
-  gem 'rspec-rails', '~> 5.0.0'
+  gem 'rspec-rails'
 
   # Linting
   gem 'brakeman'

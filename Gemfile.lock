@@ -210,7 +210,7 @@ GEM
       rexml (~> 3.2)
     pagy (6.0.1)
     parallel (1.22.1)
-    parser (3.2.0.0)
+    parser (3.2.1.0)
       ast (~> 2.4.1)
     pg (1.4.5)
     pry (0.14.2)
@@ -255,7 +255,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    ransack (3.2.1)
+    ransack (4.0.0)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
@@ -263,7 +263,7 @@ GEM
       redis-client (>= 0.9.0)
     redis-client (0.12.1)
       connection_pool
-    regexp_parser (2.6.2)
+    regexp_parser (2.7.0)
     reline (0.3.2)
       io-console (~> 0.5)
     responders (3.1.0)
@@ -278,16 +278,16 @@ GEM
     rspec-mocks (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-rails (5.0.3)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
-      railties (>= 5.2)
-      rspec-core (~> 3.10)
-      rspec-expectations (~> 3.10)
-      rspec-mocks (~> 3.10)
-      rspec-support (~> 3.10)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
     rspec-support (3.12.0)
-    rubocop (1.44.1)
+    rubocop (1.45.1)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -337,7 +337,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
-    vite_rails (3.0.13)
+    vite_rails (3.0.14)
       railties (>= 5.1, < 8)
       vite_ruby (~> 3.0, >= 3.2.2)
     vite_ruby (3.2.14)
@@ -369,7 +369,7 @@ GEM
       rexml
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.6)
+    zeitwerk (2.6.7)
 
 PLATFORMS
   arm64-darwin-21
@@ -406,7 +406,7 @@ DEPENDENCIES
   rails
   ransack
   redis
-  rspec-rails (~> 5.0.0)
+  rspec-rails
   rubocop
   rubocop-performance
   rubocop-rails
@@ -420,7 +420,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.3p185
+   ruby 3.2.1p31
 
 BUNDLED WITH
-   2.3.11
+   2.4.6

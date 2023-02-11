@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## 11 February 2023
+
+- Upgrade **Ruby** 3.1.3 -> 3.2.1
+- Upgrade gems
+  - bundler 2.3.11 -> 2.4.6
+  - rspec-rails 5.0.3 -> 6.0.1
+  - parser 3.2.0.0 -> 3.2.1.0
+  - ransack 3.2.1 -> 4.0.0
+  - regexp_parser 2.6.2 -> 2.7.0
+  - rubocop 1.44.1 -> 1.45.1
+  - vite_rails 3.0.13 -> 3.0.14
+  - zeitwerk 2.6.6 -> 2.6.7
+- Upgrade Front-End packages
+  - eslint 8.33.0 -> 8.34.0
+
 ## 08 February 2023
 
 - Upgrade **Ruby** 3.1.2 -> 3.1.3

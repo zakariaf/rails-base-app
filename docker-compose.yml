@@ -4,7 +4,7 @@ x-app: &default-app
     target: "app"
     args:
       - "RAILS_ENV=production"
-      - "RUBY_VERSION=3.1.3"
+      - "RUBY_VERSION=3.2.1"
       - "NODE_VERSION=16.17.1-r0"
       - "YARN_VERSION=1.22.19-r0"
   env_file:

@@ -12,10 +12,6 @@
   - rubocop 1.44.1 -> 1.45.1
   - vite_rails 3.0.13 -> 3.0.14
   - zeitwerk 2.6.6 -> 2.6.7
-- removed gems
-  - io-console
-  - irb
-  - reline
 - Upgrade Front-End packages
   - eslint 8.33.0 -> 8.34.0
 

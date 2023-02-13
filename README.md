@@ -233,7 +233,10 @@ yarn dev
 
 As I mentioned before, We use Docker only for building production images. We are using [Docker Compose](https://docs.docker.com/compose/) to build the images and run the containers. You can check the `docker-compose.yml` file to see the configurations. and you can check the `Dockerfile` file to see the configurations for the production image.
 
-Dockerize was done by this MR [Dockerize the app](https://github.com/zakariaf/rails-base-app/pull/23)
+Dockerize was done by these two MRs:
+
+- [Dockerize the app](https://github.com/zakariaf/rails-base-app/pull/23)
+- [Dockerize the app (2)](https://github.com/zakariaf/rails-base-app/pull/32)
 
 **NOTE** Documentation about docker is not complete yet, I will update it soon.
 

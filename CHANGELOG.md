@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 14 February 2023
+
+- Add gitlab-ci.yml file
+
 ## 13 February 2023
 
 - Improve Dokerfile by:

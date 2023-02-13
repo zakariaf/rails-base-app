@@ -5,6 +5,7 @@
 - Improve Dokerfile by:
   - Adding test layer
   - Installing gems for all environments
+  - Uninstalling the default **bundler** gem and install a specific version of it
 
 ## 11 February 2023
 

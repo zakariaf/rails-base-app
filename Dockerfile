@@ -6,12 +6,20 @@ FROM ruby:$RUBY_VERSION-$IMAGE_FLAVOUR AS base
 # Install system dependencies required both at runtime and build time
 ARG NODE_VERSION
 ARG YARN_VERSION
+ARG BUNDLER_VERSION
+
 RUN apk add --update \
   git \
   postgresql-dev \
   tzdata \
   nodejs=$NODE_VERSION \
   yarn=$YARN_VERSION
+
+# Upgrade RubyGems and install the latest Bundler version
+RUN gem update --system && \
+    rm /usr/local/lib/ruby/gems/*/specifications/default/bundler-*.gemspec && \
+    gem uninstall bundler && \
+    gem install bundler -v $BUNDLER_VERSION --no-document
 
 ######################################################################
 

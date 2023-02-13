@@ -30,8 +30,13 @@ ARG RAILS_ENV
 ENV RAILS_ENV="${RAILS_ENV}" \
     NODE_ENV="development"
 
-RUN bundle config set without "development test"
-RUN bundle install --jobs "$(nproc)" --retry "$(nproc)"
+# Install gems
+RUN bundle config set --local frozen 'true' \
+    && bundle install --no-cache --jobs "$(nproc)" --retry "$(nproc)" \
+    && rm -rf /usr/local/bundle/config \
+    && rm -rf /usr/local/bundle/cache/*.gem \
+    && find /usr/local/bundle/gems/ -name "*.c" -delete \
+    && find /usr/local/bundle/gems/ -name "*.o" -delete
 
 COPY package.json yarn.lock ./
 
@@ -41,6 +46,17 @@ RUN yarn install --frozen-lockfile
 COPY . ./
 
 RUN SECRET_KEY_BASE=irrelevant DEVISE_JWT_SECRET_KEY=irrelevant bundle exec rails assets:precompile
+
+######################################################################
+
+# We're back at the base stage
+FROM base AS test
+
+WORKDIR /app
+
+COPY --from=dependencies /usr/local/bundle/ /usr/local/bundle/
+
+COPY . ./
 
 ######################################################################
 

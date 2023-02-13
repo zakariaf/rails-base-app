@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 13 February 2023
+
+- Improve Dokerfile by:
+  - Adding test layer
+  - Installing gems for all environments
+
 ## 11 February 2023
 
 - Upgrade **Ruby** 3.1.3 -> 3.2.1

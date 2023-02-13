@@ -289,4 +289,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [ ] automat deploy process using capistrano
 - [ ] Add cypress (e2e testing)
-- [ ] add .gitlab-ci (gitlab users)

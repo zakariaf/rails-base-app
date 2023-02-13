@@ -1,0 +1,87 @@
+variables:
+  RUBY_VERSION: 3.2.1
+  NODE_VERSION: 18.12.1-r0
+  YARN_VERSION: 1.22.19-r0
+  BUNDLER_VERSION: 2.4.6
+  IMAGE_NAME: short-stories
+
+stages:
+  - build_prerequisites
+  - check
+  - test
+  - build
+
+.def_build_job: &def_build_job
+  image: docker:latest
+  stage: build
+  cache:
+    key: "$CI_COMMIT_REF_SLUG"
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker pull $DOCKER_IMAGE || echo 'Image Not Found!'
+    - docker build --target $DOCKER_BUILD_TARGET --cache-from $DOCKER_IMAGE --build-arg RAILS_ENV=$RAILS_ENV --build-arg NODE_ENV=$NODE_ENV --build-arg RUBY_VERSION=$RUBY_VERSION --build-arg NODE_VERSION=$NODE_VERSION --build-arg YARN_VERSION=$YARN_VERSION --build-arg BUNDLER_VERSION=$BUNDLER_VERSION -t $DOCKER_IMAGE .
+    - docker push $DOCKER_IMAGE
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  tags:
+    - docker
+
+build_prerequisites:
+  <<: *def_build_job
+  stage: build_prerequisites
+  variables:
+    DOCKER_BUILD_TARGET: test
+    DOCKER_IMAGE: $CI_REGISTRY_IMAGE/test:$CI_COMMIT_REF_SLUG
+    GIT_SUBMODULE_STRATEGY: recursive
+  except:
+    - tags
+
+linters:
+  image:
+    name: "$CI_REGISTRY_IMAGE/test:$CI_COMMIT_REF_SLUG"
+    entrypoint: ['']
+  stage: check
+  variables:
+    RAILS_ENV: test
+    NODE_ENV: test
+  before_script:
+    - bundle install
+    - yarn install
+  script:
+    - bundle exec overcommit --sign
+    - bundle exec overcommit --sign pre-commit
+    - SKIP=AuthorName,AuthorEmail bundle exec overcommit --run
+  tags:
+    - docker
+  except:
+    - tags
+
+test:
+  image:
+    name: "$CI_REGISTRY_IMAGE/test:$CI_COMMIT_REF_SLUG"
+    entrypoint: ['']
+  stage: test
+  services:
+    - postgres:15.0
+    - redis:7.0.5
+  variables:
+    RAILS_ENV: test
+    NODE_ENV: test
+    POSTGRES_HOST: postgres
+    POSTGRES_DB: runner_db
+    POSTGRES_USER: runner
+    POSTGRES_PASSWORD: '123456'
+    POSTGRES_PORT: 5432
+  before_script:
+    - yarn install
+    - bundle exec rails db:setup
+  script:
+    - bundle exec rails spec
+  tags:
+    - docker
+  except:
+    - tags
+

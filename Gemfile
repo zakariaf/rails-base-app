@@ -99,6 +99,7 @@ group :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'shoulda-matchers'
   # RSpec matchers for JSON API.
   gem 'jsonapi-rspec'
   gem 'selenium-webdriver'

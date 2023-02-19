@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 19 February 2023
+
+- Add shoulda-matchers gem and its configuration
+
 ## 14 February 2023
 
 - Add gitlab-ci.yml file

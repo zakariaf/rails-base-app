@@ -63,6 +63,7 @@ You can see a list of gems that are in the project with a link to their commit. 
 - 14- [Redis](https://redis.io/) ([commit](https://github.com/zakariaf/rails-base-app/commit/3d6bd4194c3a992c838093bb8c8c7332784cffba), [PR](https://github.com/zakariaf/rails-base-app/pull/20))
 - 15- [Sidekiq](https://github.com/mperham/sidekiq) ([commit](https://github.com/zakariaf/rails-base-app/commit/f7b759d9d42ce3444a04978fe2cbfc66cd120250), [PR](https://github.com/zakariaf/rails-base-app/pull/22))
 - 16- [dotenv](https://github.com/bkeepers/dotenv) ([commit](https://github.com/zakariaf/rails-base-app/commit/3aaa696c4228aac2dac40ff42591f07dc74a62bb))
+- 28- [shoulda-matchers]() ([PR] (https://github.com/zakariaf/rails-base-app/pull/34))
 
 ### Front-end
 

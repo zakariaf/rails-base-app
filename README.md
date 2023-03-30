@@ -19,22 +19,32 @@ Several gems and packages are included in this example app that I've been using 
 
 ## Table of Contents
 
-- [Tech stack](#tech-stack)
-  - [Back-end](#back-end)
-  - [Front-end](#front-end)
-  - [Healthy app](#healthy-app)
+- [An example Rails 7 app](#an-example-rails-7-app)
+  - [Table of Contents](#table-of-contents)
+  - [Tech stack](#tech-stack)
+    - [Back-end](#back-end)
+    - [Front-end](#front-end)
+    - [Healthy app](#healthy-app)
+      - [Frontend](#frontend)
+      - [Backend](#backend)
+      - [Common](#common)
   - [Auth](#auth)
+    - [`/signup`](#signup)
+    - [`/login`](#login)
+    - [`/logout`](#logout)
   - [Apps](#apps)
-- [Running app](#running-app)
-  - [Clone the repo](#clone-the-repo)
-  - [Install dependencies](#install-dependencies)
-  - [Copy .env to .env.local](#copy-env-to-envlocal)
-  - [Setup database](#setup-database)
-  - [Run the app](#run-the-app)
-- [Renaming the project](#renaming-the-project)
-- [Docker](#docker)
-- [How to contribute](#how-to-contribute)
-- [License](#license)
+  - [Running app](#running-app)
+    - [1. Clone the repo](#1-clone-the-repo)
+    - [2. Install dependencies](#2-install-dependencies)
+    - [3. Copy .env to .env.local](#3-copy-env-to-envlocal)
+    - [4. Setup database](#4-setup-database)
+    - [5. Run the app](#5-run-the-app)
+  - [Docker](#docker)
+    - [1. Build the images](#1-build-the-images)
+  - [Renaming the project](#renaming-the-project)
+  - [How to contribute](#how-to-contribute)
+  - [License](#license)
+  - [TODO](#todo)
 
 ## Tech stack
 
@@ -213,21 +223,13 @@ cp .env .env.test
 ### 4. Setup database
 
 ```bash
-bundle rails db:setup
+bundle exec rails db:setup
 ```
 
 ### 5. Run the app
 
-- Run the server
-
 ```bash
-bundle rails s
-```
-
-- Run the frontend
-
-```bash
-yarn dev
+bin/dev
 ```
 
 ## Docker

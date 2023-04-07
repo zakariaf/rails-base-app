@@ -21,6 +21,45 @@
   - vite 4.1.1 -> 4.2.1
   - vite-plugin-ruby 3.1.3 -> 3.2.1
   - vue-tsc 1.0.24 -> 1.2.0
+- Upgrade gems
+  - Rails gems 7.0.4.2 -> 7.0.4.3
+  - addressable 2.8.1 -> 2.8.3
+  - brakeman 5.4.0 -> 5.4.1
+  - capybara 3.38.0 -> 3.39.0
+  - concurrent-ruby 1.2.0 -> 1.2.2
+  - connection_pool 2.3.0 -> 2.4.0
+  - database_cleaner-active_record 2.0.1 -> 2.1.0
+  - debug 1.7.1 -> 1.7.2
+  - devise 4.8.1 -> 4.9.2
+  - dry-auto_inject 1.0.0 -> 1.0.1
+  - fasterer 0.10.0 -> 0.10.1
+  - irb 1.6.2 -> 1.6.3
+  - loofah 2.19.1 -> 2.20.0
+  - minitest 5.17.0 -> 5.18.0
+  - msgpack 1.6.0 -> 1.7.0
+  - nio4r 2.5.8 -> 2.5.9
+  - nokogiri 1.14.1 -> 1.14.2
+  - pagy 6.0.1 -> 6.0.3
+  - parser 3.2.1.0 -> 3.2.2.0
+  - pg 1.4.5 -> 1.4.6
+  - puma 6.0.2 -> 6.2.1
+  - rack 2.2.6.2 -> 2.2.6.4
+  - rack-cors 1.1.1 -> 2.0.1
+  - rack-test 2.0.2 -> 2.1.0
+  - redis-client 0.12.1 -> 0.14.1
+  - reline 0.3.2 -> 0.3.3
+  - rspec-mocks 3.12.3 -> 3.12.5
+  - rubocop 1.45.1 -> 1.49.0
+  - rubocop-ast 1.24.1 -> 1.28.0
+  - rubocop-capybara 2.17.0 -> 2.17.1
+  - rubocop-rails 2.17.4 -> 2.19.0
+  - rubocop-rspec 2.18.1 -> 2.19.0
+  - ruby-progressbar 1.11.0 -> 1.13.0
+  - ruby_parser 3.19.2 -> 3.20.0
+  - selenium-webdriver 4.8.0 -> 4.8.6
+  - sidekiq 7.0.3 -> 7.0.8
+  - timeout 0.3.1 -> 0.3.2
+  - vite_ruby 3.2.14 -> 3.3.0
 
 ## 19 February 2023
 

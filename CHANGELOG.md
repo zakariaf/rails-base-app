@@ -60,6 +60,7 @@
   - sidekiq 7.0.3 -> 7.0.8
   - timeout 0.3.1 -> 0.3.2
   - vite_ruby 3.2.14 -> 3.3.0
+- Remove empty model spec files to fix rubocop errors
 
 ## 19 February 2023
 

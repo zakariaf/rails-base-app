@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## 7 April 2023
+
+- Upgrade Front-End packages
+  - **typescript** 4.9.5 -> **5.0.3**
+  - @babel/types 7.20.7 -> 7.21.4
+  - @types/node 18.13.0 -> 18.15.11
+  - @typescript-eslint/eslint-plugin 5.51.0 -> 5.57.1
+  - @typescript-eslint/parser 5.51.0 -> 5.57.1
+  - @vitejs/plugin-vue 4.0.0 -> 4.1.0
+  - @vue/eslint-config-prettier 7.0.0 -> 7.1.0
+  - axios 1.3.2 -> 1.3.5
+  - eslint 8.34.0 -> 8.37.0
+  - eslint-config-prettier 8.6.0 -> 8.8.0
+  - eslint-plugin-vue 9.9.0 -> 9.10.0
+  - lint-staged 13.1.1 -> 13.2.0
+  - pinia 2.0.30 -> 2.0.33
+  - prettier 2.8.4 -> 2.8.7
+  - sass 1.58.0 -> 1.61.0
+  - vite 4.1.1 -> 4.2.1
+  - vite-plugin-ruby 3.1.3 -> 3.2.1
+  - vue-tsc 1.0.24 -> 1.2.0
+
 ## 19 February 2023
 
 - Add shoulda-matchers gem and its configuration

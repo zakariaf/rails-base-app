@@ -1,6 +1,10 @@
 # CHANGELOG
 
-## 7 April 2023
+## 7 April 2023 - 2
+
+- Configure Renovate
+
+## 7 April 2023 - 1
 
 - Upgrade Front-End packages
   - **typescript** 4.9.5 -> **5.0.3**

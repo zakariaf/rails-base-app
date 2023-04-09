@@ -9,16 +9,15 @@ const http = axios.create({
 
 http.interceptors.response.use(
   (response) => {
-    if (response.status === 401) {
-      AuthService.clearCache();
-      return response;
-    }
-
     return response;
   },
   (error) => {
-    const errMessage: string = error?.response?.data || 'Unknown Error';
+    if (error.status === 401) {
+      AuthService.clearCache();
+      return error;
+    }
 
+    const errMessage: string = error?.response?.data || 'Unknown Error';
     return Promise.reject(errMessage);
   },
 );

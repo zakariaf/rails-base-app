@@ -2,9 +2,12 @@
 
 ## 9 April 2023
 
-- Downgrade **Typescript** 5.0.3 -> 4.9.5
-- Remove definition of `@` in `vite.config.ts` file
-- Improve error handling in `app/javascript/services/http.service.ts` file
+- Frontend changes
+  - Downgrade **Typescript** 5.0.3 -> 4.9.5
+  - Remove definition of `@` in `vite.config.ts` file
+  - Improve error handling in `app/javascript/services/http.service.ts` file
+- Backend changes
+  - use the alpine version of the postgres and redis images
 
 ## 7 April 2023 - 2
 

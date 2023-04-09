@@ -8,6 +8,8 @@
   - Improve error handling in `app/javascript/services/http.service.ts` file
 - Backend changes
   - use the alpine version of the postgres and redis images
+  - upgrade gems:
+    - rubocop-performance 1.16.0 -> 1.17.1
 
 ## 7 April 2023 - 2
 

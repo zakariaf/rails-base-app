@@ -8,6 +8,16 @@
 
 ## 7 April 2023 - 2
 
+- upgrade redis tag
+  - `docker-compose.yml`: 7.0.5-alpine -> 7.0.10-alpine
+  - `gitlab-ci.yml`: 7.0.5 -> 7.0.10
+- upgrade postgres tag
+  - `docker-compose.yml`: 15.0-alpine -> 15.2-alpine
+  - `gitlab-ci.yml`: 15.0 -> 15.2
+- Upgrade Front-End packages
+  - pinia 2.0.33 -> 2.0.34
+  - lint-staged 13.2.0 -> 13.2.1
+  - eslint 8.37.0 -> 8.38.0
 - Configure Renovate
 
 ## 7 April 2023 - 1

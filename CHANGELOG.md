@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 10 may 2023
+
+- Upgrade FrontEnd packages
+- Upgrade gems
+
 ## 9 April 2023
 
 - Frontend changes

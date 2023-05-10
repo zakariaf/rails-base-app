@@ -68,7 +68,7 @@
 - - :approve
   - sidekiq
   - :who: https://github.com/zakariaf/rails-base-app
-    :why: 'All licensing terms fulfilled; License: LGPL (https://github.com/mperham/sidekiq/blob/v7.0.8/LICENSE.txt)'
+    :why: 'All licensing terms fulfilled; License: LGPL (https://github.com/mperham/sidekiq/blob/v7.1.0/LICENSE.txt)'
     :versions:
     - 6.4.1
     - 6.4.2
@@ -77,6 +77,7 @@
     - 7.0.2
     - 7.0.3
     - 7.0.8
+    - 7.1.0
     :when: 2023-04-07 11:09:20.617234000 Z
 - - :approve
   - big-integer

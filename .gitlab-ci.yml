@@ -65,7 +65,7 @@ test:
     entrypoint: ['']
   stage: test
   services:
-    - postgres:15.2-alpine
+    - postgres:15.3-alpine
     - redis:7.0.11-alpine
   variables:
     RAILS_ENV: test

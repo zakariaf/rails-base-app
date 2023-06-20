@@ -2546,9 +2546,9 @@ vue-query@^1.26.0:
     vue-demi "0.10.1"
 
 vue-router@^4.1.6:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.2.0.tgz#558f31978a21ce3accf5122ffdf2cec34a5d2517"
-  integrity sha512-c+usESa6ZoWsm4PPdzRSyenp5A4dsUtnDJnrI03fY1IpIihA9TK3x5ffgkFDpjhLJZewsXoKURapNLFdZjuqTg==
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.2.2.tgz#b0097b66d89ca81c0986be03da244c7b32a4fd81"
+  integrity sha512-cChBPPmAflgBGmy3tBsjeoe3f3VOSG6naKyY5pjtrqLGbNEXdzCigFUHgBvp9e3ysAtFtEx7OLqcSDh/1Cq2TQ==
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 

@@ -1,8 +1,15 @@
 # CHANGELOG
 
-## 10 may 2023
+## 19 November 2023
 
-- Upgrade FrontEnd packages
+- Backend changes
+  - **Rails gems** 7.0.5 -> **7.0.8**
+  - Upgrade gems
+- Upgrade front end packages
+
+## 10 May 2023
+
+- Upgrade front end packages
 - Upgrade gems
 
 ## 9 April 2023

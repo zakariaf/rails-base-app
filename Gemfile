@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby File.read('.ruby-version')
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails'
+gem 'rails', '~> 7.0.8'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -97,7 +97,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'database_cleaner-active_record'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', '< 6.4'
   gem 'faker'
   gem 'shoulda-matchers'
   # RSpec matchers for JSON API.

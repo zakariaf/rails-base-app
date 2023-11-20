@@ -199,6 +199,8 @@ GEM
     nio4r (2.6.0)
     nokogiri (1.15.5-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.5-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     overcommit (0.60.0)
       childprocess (>= 0.6.3, < 5)
@@ -385,7 +387,6 @@ GEM
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-22
-  ruby
   x86_64-linux
 
 DEPENDENCIES

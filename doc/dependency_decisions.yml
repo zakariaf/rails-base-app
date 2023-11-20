@@ -59,13 +59,6 @@
     - 0.9.1
     :when: 2022-04-13 03:50:38.233482000 Z
 - - :approve
-  - colorize
-  - :who: https://github.com/zakariaf/rails-base-app
-    :why: 'All licensing terms fulfilled; License: GPL-2.0 (https://github.com/fazibear/colorize/blob/master/LICENSE)'
-    :versions:
-    - 0.8.1
-    :when: 2022-04-13 03:51:02.497982000 Z
-- - :approve
   - sidekiq
   - :who: https://github.com/zakariaf/rails-base-app
     :why: 'All licensing terms fulfilled; License: LGPL (https://github.com/mperham/sidekiq/blob/v7.2.0/LICENSE.txt)'
